@@ -11,7 +11,7 @@ import RxSwift
 @testable import AppStoreSearchDemoCore
 
 final class ItsDataStackTest: XCTestCase {
-    private let itsDataStack: ItsDataStack = ItsDataStack()
+    private let itsDataStack: ItsDataStack = .init()
     private var disposeBag: DisposeBag = .init()
     
     override func setUp() {

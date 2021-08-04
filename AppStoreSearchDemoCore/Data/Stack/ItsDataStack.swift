@@ -11,6 +11,7 @@ import RxSwift
 
 enum ITSServiceType: Moya.TargetType {
     case software(String)
+    case lookup(String)
     
     // MARK: Moya.TargetType
     
@@ -22,7 +23,12 @@ enum ITSServiceType: Moya.TargetType {
     }
     
     var path: String {
-        "search"
+        switch self {
+        case .software(_):
+            return "search"
+        case .lookup(_):
+            return "lookup"
+        }
     }
     
     var method: Moya.Method {
@@ -38,10 +44,15 @@ enum ITSServiceType: Moya.TargetType {
         case .software(let term):
             return .requestParameters(parameters: ["term": term, "entity": "software"],
                                       encoding: URLEncoding.queryString)
+        case .lookup(let id):
+            return .requestParameters(parameters: ["id": id],
+                                      encoding: URLEncoding.queryString)
         }
     }
     
-    var headers: [String : String]? { nil }
+    var headers: [String : String]? {
+        nil
+    }
 }
 
 final class ItsDataStack: NetworkImpl<ITSServiceType> {}

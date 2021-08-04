@@ -38,4 +38,24 @@ final class ItsDataStackTest: XCTestCase {
         
         wait(for: [expectation], timeout: 3)
     }
+    
+    func testLookupRequest() {
+        let expectation: XCTestExpectation = .init()
+        
+        itsDataStack
+            .request(.lookup("1557114617"))
+            .subscribe { data in
+                guard let string: String = String(data: data, encoding: .utf8) else {
+                    XCTFail("unicode error!")
+                    return
+                }
+                log.info(string)
+                expectation.fulfill()
+            } onFailure: { error in
+                XCTFail(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+        
+        wait(for: [expectation], timeout: 3)
+    }
 }

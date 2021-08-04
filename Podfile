@@ -68,6 +68,5 @@ end
 
 target 'AppStoreSearchDemoCoreTests' do
   rxswift_pod
-  moya_pod
   swiftlint_pod
 end

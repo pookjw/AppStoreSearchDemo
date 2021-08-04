@@ -1,0 +1,84 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Kingfisher (6.3.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - Realm (10.12.0):
+    - Realm/Headers (= 10.12.0)
+  - Realm/Headers (10.12.0)
+  - RealmSwift (10.12.0):
+    - Realm (= 10.12.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxFlow (2.12.2):
+    - RxCocoa (>= 6.0.0)
+    - RxSwift (>= 6.0.0)
+  - RxRealm (5.0.1):
+    - Realm (~> 10.5)
+    - RealmSwift (~> 10.5)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - SnapKit (5.0.1)
+  - SwiftLint (0.43.1)
+  - SwiftyBeaver (1.9.5)
+
+DEPENDENCIES:
+  - Kingfisher (= 6.3.1)
+  - Moya (= 14.0)
+  - R.swift (= 5.4.0)
+  - RealmSwift (= 10.12.0)
+  - RxCocoa (= 6.2.0)
+  - RxFlow (= 2.12.2)
+  - RxRealm (= 5.0.1)
+  - RxSwift (= 6.2.0)
+  - SnapKit (= 5.0.1)
+  - SwiftLint (= 0.43.1)
+  - SwiftyBeaver (= 1.9.5)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - R.swift
+    - R.swift.Library
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxFlow
+    - RxRealm
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftLint
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  Realm: 32488213acb44660539c619d620cec1bac046166
+  RealmSwift: 0abdca6231d5ff8a4f84cef9c1121ef95a483faf
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxFlow: fa434215aca391d10d4d5048c0a035c9502b3666
+  RxRealm: bd7c601e78cfebe48c24d4550db83c31e1ab2c33
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+
+PODFILE CHECKSUM: 5d085ae2162b3a8598aeebb9f18ba678538aee39
+
+COCOAPODS: 1.10.2

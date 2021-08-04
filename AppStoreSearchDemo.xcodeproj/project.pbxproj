@@ -77,7 +77,6 @@
 		4FC29B6526BA360F001AADAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FC29B6826BA360F001AADAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FC29B6A26BA360F001AADAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FC29B7326BA3610001AADAB /* AppStoreSearchDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoTests.swift; sourceTree = "<group>"; };
 		4FC29B7926BA3610001AADAB /* AppStoreSearchDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreSearchDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B7D26BA3610001AADAB /* AppStoreSearchDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoUITests.swift; sourceTree = "<group>"; };
 		4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppStoreSearchDemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				4FC29B5B26BA360C001AADAB /* AppStoreSearchDemo */,
-				4FC29B7226BA3610001AADAB /* AppStoreSearchDemoTests */,
 				4FC29B7C26BA3610001AADAB /* AppStoreSearchDemoUITests */,
 				4FC29B9026BA385C001AADAB /* AppStoreSearchDemoCore */,
 				4FC29B9C26BA385C001AADAB /* AppStoreSearchDemoCoreTests */,
@@ -171,14 +169,6 @@
 				4FC29B6A26BA360F001AADAB /* Info.plist */,
 			);
 			path = AppStoreSearchDemo;
-			sourceTree = "<group>";
-		};
-		4FC29B7226BA3610001AADAB /* AppStoreSearchDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				4FC29B7326BA3610001AADAB /* AppStoreSearchDemoTests.swift */,
-			);
-			path = AppStoreSearchDemoTests;
 			sourceTree = "<group>";
 		};
 		4FC29B7C26BA3610001AADAB /* AppStoreSearchDemoUITests */ = {
@@ -213,7 +203,6 @@
 				51556684F1AC4D0EB257BEED /* Pods-AppStoreSearchDemoCore.debug.xcconfig */,
 				01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

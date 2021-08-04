@@ -14,12 +14,17 @@
 		4FC29B6426BA360C001AADAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6226BA360C001AADAB /* Main.storyboard */; };
 		4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6526BA360F001AADAB /* Assets.xcassets */; };
 		4FC29B6926BA360F001AADAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6726BA360F001AADAB /* LaunchScreen.storyboard */; };
-		4FC29B7E26BA3610001AADAB /* AppStoreSearchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B7D26BA3610001AADAB /* AppStoreSearchDemoUITests.swift */; };
 		4FC29B9726BA385C001AADAB /* AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; };
-		4FC29B9E26BA385C001AADAB /* AppStoreSearchDemoCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B9D26BA385C001AADAB /* AppStoreSearchDemoCoreTests.swift */; };
 		4FC29B9F26BA385C001AADAB /* AppStoreSearchDemoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC29B9126BA385C001AADAB /* AppStoreSearchDemoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FC29BA226BA385C001AADAB /* AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; };
 		4FC29BA326BA385C001AADAB /* AppStoreSearchDemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F32524C426BA66CA00CD64A0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C326BA66CA00CD64A0 /* Network.swift */; };
+		F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C626BA66E100CD64A0 /* NetworkImpl.swift */; };
+		F32524CF26BA6E3F00CD64A0 /* ItsDataStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524CE26BA6E3F00CD64A0 /* ItsDataStackTest.swift */; };
+		F32524D226BA71B400CD64A0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D126BA71B400CD64A0 /* Log.swift */; };
+		F32524D426BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */; };
+		F32524D626BA738500CD64A0 /* ItsDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D526BA738500CD64A0 /* ItsDataStack.swift */; };
+		FCE26AFFE2A12ACF864F0675 /* Pods_AppStoreSearchDemoCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3E55EC3CC1C3D77818AC1F /* Pods_AppStoreSearchDemoCoreTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,7 @@
 /* Begin PBXFileReference section */
 		01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCore.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCore/Pods-AppStoreSearchDemoCore.release.xcconfig"; sourceTree = "<group>"; };
 		11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31C6A9131AF0900CF015D926 /* Pods-AppStoreSearchDemoCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FC29B5926BA360C001AADAB /* AppStoreSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B5C26BA360C001AADAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC29B6026BA360C001AADAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,15 +84,21 @@
 		4FC29B6826BA360F001AADAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FC29B6A26BA360F001AADAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FC29B7926BA3610001AADAB /* AppStoreSearchDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreSearchDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FC29B7D26BA3610001AADAB /* AppStoreSearchDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoUITests.swift; sourceTree = "<group>"; };
 		4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppStoreSearchDemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B9126BA385C001AADAB /* AppStoreSearchDemoCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppStoreSearchDemoCore.h; sourceTree = "<group>"; };
 		4FC29B9626BA385C001AADAB /* AppStoreSearchDemoCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreSearchDemoCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FC29B9D26BA385C001AADAB /* AppStoreSearchDemoCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoCoreTests.swift; sourceTree = "<group>"; };
 		51556684F1AC4D0EB257BEED /* Pods-AppStoreSearchDemoCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCore.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCore/Pods-AppStoreSearchDemoCore.debug.xcconfig"; sourceTree = "<group>"; };
 		5FC94C6EFAFF5FFA6EE72514 /* Pods-AppStoreSearchDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemo.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemo/Pods-AppStoreSearchDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8A03AA6E33FBF7B70DA14F6E /* Pods-AppStoreSearchDemoCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCoreTests.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA3E55EC3CC1C3D77818AC1F /* Pods_AppStoreSearchDemoCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemoCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78057F32E8523AF803C8117 /* Pods_AppStoreSearchDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC86E3F7C910E2CB508AC8D /* Pods-AppStoreSearchDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemo.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemo/Pods-AppStoreSearchDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F32524C326BA66CA00CD64A0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F32524C626BA66E100CD64A0 /* NetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImpl.swift; sourceTree = "<group>"; };
+		F32524CE26BA6E3F00CD64A0 /* ItsDataStackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItsDataStackTest.swift; sourceTree = "<group>"; };
+		F32524D126BA71B400CD64A0 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoUITests.swift; sourceTree = "<group>"; };
+		F32524D526BA738500CD64A0 /* ItsDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItsDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC29B9726BA385C001AADAB /* AppStoreSearchDemoCore.framework in Frameworks */,
+				FCE26AFFE2A12ACF864F0675 /* Pods_AppStoreSearchDemoCoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +143,7 @@
 			children = (
 				E78057F32E8523AF803C8117 /* Pods_AppStoreSearchDemo.framework */,
 				11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */,
+				BA3E55EC3CC1C3D77818AC1F /* Pods_AppStoreSearchDemoCoreTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,7 +188,7 @@
 		4FC29B7C26BA3610001AADAB /* AppStoreSearchDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4FC29B7D26BA3610001AADAB /* AppStoreSearchDemoUITests.swift */,
+				F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */,
 			);
 			path = AppStoreSearchDemoUITests;
 			sourceTree = "<group>";
@@ -183,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				4FC29B9126BA385C001AADAB /* AppStoreSearchDemoCore.h */,
+				F32524D026BA71AB00CD64A0 /* Util */,
+				F36F5E9726BA662600966EE3 /* Domain */,
+				F36F5E9626BA662000966EE3 /* Data */,
 			);
 			path = AppStoreSearchDemoCore;
 			sourceTree = "<group>";
@@ -190,7 +207,8 @@
 		4FC29B9C26BA385C001AADAB /* AppStoreSearchDemoCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				4FC29B9D26BA385C001AADAB /* AppStoreSearchDemoCoreTests.swift */,
+				F32524CB26BA6E1800CD64A0 /* Domain */,
+				F32524CC26BA6E2300CD64A0 /* Data */,
 			);
 			path = AppStoreSearchDemoCoreTests;
 			sourceTree = "<group>";
@@ -202,8 +220,74 @@
 				EAC86E3F7C910E2CB508AC8D /* Pods-AppStoreSearchDemo.release.xcconfig */,
 				51556684F1AC4D0EB257BEED /* Pods-AppStoreSearchDemoCore.debug.xcconfig */,
 				01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */,
+				31C6A9131AF0900CF015D926 /* Pods-AppStoreSearchDemoCoreTests.debug.xcconfig */,
+				8A03AA6E33FBF7B70DA14F6E /* Pods-AppStoreSearchDemoCoreTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F32524C526BA66CE00CD64A0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F32524C326BA66CA00CD64A0 /* Network.swift */,
+				F32524C626BA66E100CD64A0 /* NetworkImpl.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F32524C826BA6B8800CD64A0 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				F32524D526BA738500CD64A0 /* ItsDataStack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		F32524CB26BA6E1800CD64A0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F32524CC26BA6E2300CD64A0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F32524CD26BA6E2C00CD64A0 /* Stack */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F32524CD26BA6E2C00CD64A0 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				F32524CE26BA6E3F00CD64A0 /* ItsDataStackTest.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		F32524D026BA71AB00CD64A0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F32524D126BA71B400CD64A0 /* Log.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F36F5E9626BA662000966EE3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F32524C826BA6B8800CD64A0 /* Stack */,
+				F32524C526BA66CE00CD64A0 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F36F5E9726BA662600966EE3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FC29BA826BA385C001AADAB /* Build configuration list for PBXNativeTarget "AppStoreSearchDemoCoreTests" */;
 			buildPhases = (
+				4FDC8207425327AB87A1448F /* [CP] Check Pods Manifest.lock */,
 				4FC29B9226BA385C001AADAB /* Sources */,
 				4FC29B9326BA385C001AADAB /* Frameworks */,
 				4FC29B9426BA385C001AADAB /* Resources */,
+				D0E258B990FB2ECE8B45C647 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,13 +398,16 @@
 					};
 					4FC29B7826BA3610001AADAB = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1250;
 						TestTargetID = 4FC29B5826BA360C001AADAB;
 					};
 					4FC29B8E26BA385C001AADAB = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1250;
 					};
 					4FC29B9526BA385C001AADAB = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1250;
 						TestTargetID = 4FC29B5826BA360C001AADAB;
 					};
 				};
@@ -379,6 +468,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4FDC8207425327AB87A1448F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppStoreSearchDemoCoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		53D477A8BA18F492FDE725C2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +551,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppStoreSearchDemo/Pods-AppStoreSearchDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D0E258B990FB2ECE8B45C647 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -456,7 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FC29B7E26BA3610001AADAB /* AppStoreSearchDemoUITests.swift in Sources */,
+				F32524D426BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +592,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32524D626BA738500CD64A0 /* ItsDataStack.swift in Sources */,
+				F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */,
+				F32524C426BA66CA00CD64A0 /* Network.swift in Sources */,
+				F32524D226BA71B400CD64A0 /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FC29B9E26BA385C001AADAB /* AppStoreSearchDemoCoreTests.swift in Sources */,
+				F32524CF26BA6E3F00CD64A0 /* ItsDataStackTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FC94C6EFAFF5FFA6EE72514 /* Pods-AppStoreSearchDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -670,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAC86E3F7C910E2CB508AC8D /* Pods-AppStoreSearchDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -700,6 +834,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
@@ -713,6 +848,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.AppStoreSearchDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = AppStoreSearchDemo;
@@ -723,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
@@ -746,6 +883,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51556684F1AC4D0EB257BEED /* Pods-AppStoreSearchDemoCore.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -768,6 +906,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -779,6 +918,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -810,13 +950,15 @@
 		};
 		4FC29BA926BA385C001AADAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C6A9131AF0900CF015D926 /* Pods-AppStoreSearchDemoCoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -826,6 +968,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.AppStoreSearchDemoCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppStoreSearchDemo.app/AppStoreSearchDemo";
@@ -834,13 +977,15 @@
 		};
 		4FC29BAA26BA385C001AADAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A03AA6E33FBF7B70DA14F6E /* Pods-AppStoreSearchDemoCoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P53D29U9LJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

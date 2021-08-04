@@ -52,7 +52,6 @@ target 'AppStoreSearchDemo' do
   rxflow_pod
   rswift_pod
   kingfisher_pod
-  swiftybeaver_pod
   snapkit_pod
   swiftlint_pod
 end
@@ -64,5 +63,11 @@ target 'AppStoreSearchDemoCore' do
   realmswift_pod
   rxrealm_pod
   swiftybeaver_pod
+  swiftlint_pod
+end
+
+target 'AppStoreSearchDemoCoreTests' do
+  rxswift_pod
+  moya_pod
   swiftlint_pod
 end

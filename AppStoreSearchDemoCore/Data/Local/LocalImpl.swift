@@ -64,7 +64,7 @@ class LocalImpl<T: RealmSwift.Object>: Local {
                 }
             }
             
-            OperationQueue.main.addOperation(operation)
+            self.queue.addOperation(operation)
             
             return Disposables.create {
                 operation.cancel()

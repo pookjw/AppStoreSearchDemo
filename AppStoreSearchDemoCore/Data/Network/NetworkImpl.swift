@@ -9,14 +9,12 @@ import Foundation
 import Moya
 import RxSwift
 
-class NetworkImpl<T: Moya.TargetType>: Network {
-    typealias TargetType = T
-    
-    private let provider: MoyaProvider<T> = .init()
- 
-    func request(_ serviceType: T) -> Single<Data> {
+class NetworkImpl: Network {
+    func request<T: TargetType>(_ serviceType: T) -> Single<Data> {
         return .create { promise in
-            let cancellable: Cancellable = self.provider.request(serviceType) { result in
+            let provider: MoyaProvider<T> = .init()
+            
+            let cancellable: Cancellable = provider.request(serviceType) { result in
                 switch result {
                 case .failure(let error):
                     promise(.failure(error))

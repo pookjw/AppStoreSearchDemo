@@ -1,5 +1,5 @@
 //
-//  ItunesStoreTest.swift
+//  ITSServiceTest.swift
 //  AppStoreSearchDemoCoreTests
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -10,8 +10,8 @@ import XCTest
 import RxSwift
 @testable import AppStoreSearchDemoCore
 
-final class ItunesStoreTest: XCTestCase {
-    private let itunesStore: ItunesStore = .init()
+final class ITSServiceTest: XCTestCase {
+    private let network: Network = NetworkImpl()
     private var disposeBag: DisposeBag = .init()
     
     override func setUp() {
@@ -22,8 +22,8 @@ final class ItunesStoreTest: XCTestCase {
     func testSoftwareRequest() {
         let expectation: XCTestExpectation = .init()
         
-        itunesStore
-            .request(.software("DoroDoro"))
+        network
+            .request(ITSServiceType.software("DoroDoro"))
             .subscribe { data in
                 guard let string: String = String(data: data, encoding: .utf8) else {
                     XCTFail("unicode error!")
@@ -42,8 +42,8 @@ final class ItunesStoreTest: XCTestCase {
     func testLookupRequest() {
         let expectation: XCTestExpectation = .init()
         
-        itunesStore
-            .request(.lookup("1557114617"))
+        network
+            .request(ITSServiceType.lookup("1557114617"))
             .subscribe { data in
                 guard let string: String = String(data: data, encoding: .utf8) else {
                     XCTFail("unicode error!")

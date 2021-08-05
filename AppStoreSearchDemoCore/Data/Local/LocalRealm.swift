@@ -21,20 +21,18 @@ enum LocalError: Error, LocalizedError {
 }
 
 protocol LocalRealm {
-    associatedtype Object: RealmSwift.Object
-    
     // Read
-    func objects(predicate: NSPredicate?) -> Single<[Object]>
+    func objects<T: Object>(predicate: NSPredicate?) -> Single<[T]>
     
     // Create
-    func create(block: @escaping ((Object) -> ())) -> Single<Object>
+    func create<T: Object>(block: @escaping ((T) -> ())) -> Single<T>
     
     // Modify
-    func modify(_ object: Object, block: @escaping ((Object) -> ())) -> Completable
+    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Completable
     
     // Delete
-    func delete(_ object: Object) -> Completable
+    func delete<T: Object>(_ object: T) -> Completable
     
     // Observe
-    func observe() -> Observable<Void>
+    func observe(type: Object.Type) -> Observable<Void>
 }

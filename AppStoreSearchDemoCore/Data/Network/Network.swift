@@ -21,7 +21,5 @@ enum NetworkError: Error, LocalizedError {
 }
 
 protocol Network {
-    associatedtype TargetType: Moya.TargetType
-    
-    func request(_ serviceType: TargetType) -> Single<Data>
+    func request<T: TargetType>(_ serviceType: T) -> Single<Data>
 }

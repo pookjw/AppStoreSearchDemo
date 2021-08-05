@@ -11,21 +11,14 @@ import RxSwift
 
 private var kOperationQueues: [String: OperationQueue] = [:]
 
-class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
-    typealias Object = T
+class LocalRealmImpl: LocalRealm {
     
-    private var queue: OperationQueue!
-    
-    init() {
-        configureQueue()
-    }
-    
-    func objects(predicate: NSPredicate?) -> Single<[T]> {
+    func objects<T: Object>(predicate: NSPredicate?) -> Single<[T]> {
         return .create { promise in
             
             let operation: BlockOperation = .init {
                 do {
-                    let realmStore: Realm = try self.newRealmStore()
+                    let realmStore: Realm = try self.realmStore(type: T.self)
                     var results: Results<T> = realmStore.objects(T.self)
                     
                     if let predicate: NSPredicate = predicate {
@@ -38,7 +31,7 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
                 }
             }
             
-            self.queue.addOperation(operation)
+            self.queue(type: T.self).addOperation(operation)
             
             return Disposables.create {
                 operation.cancel()
@@ -46,12 +39,12 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
         }
     }
     
-    func create(block: @escaping ((T) -> ())) -> Single<T> {
+    func create<T: Object>(block: @escaping ((T) -> ())) -> Single<T> {
         return .create { promise in
             
             let operation: BlockOperation = .init {
                 do {
-                    let realmStore: Realm = try self.newRealmStore()
+                    let realmStore: Realm = try self.realmStore(type: T.self)
                     let object: T = .init()
                     block(object)
                     
@@ -64,7 +57,7 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
                 }
             }
             
-            self.queue.addOperation(operation)
+            self.queue(type: T.self).addOperation(operation)
             
             return Disposables.create {
                 operation.cancel()
@@ -72,14 +65,14 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
         }
     }
     
-    func modify(_ object: T, block: @escaping ((T) -> ())) -> Completable {
+    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Completable {
         return .create { promise in
             
             let ref: ThreadSafeReference = .init(to: object)
             
             let operation: BlockOperation = .init {
                 do {
-                    let realmStore: Realm = try self.newRealmStore()
+                    let realmStore: Realm = try self.realmStore(type: T.self)
                     
                     try realmStore.write {
                         guard let _object: T = realmStore.resolve(ref) else {
@@ -94,7 +87,7 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
                 }
             }
             
-            self.queue.addOperation(operation)
+            self.queue(type: T.self).addOperation(operation)
             
             return Disposables.create {
                 operation.cancel()
@@ -102,13 +95,13 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
         }
     }
     
-    func delete(_ object: T) -> Completable {
+    func delete<T: Object>(_ object: T) -> Completable {
         return .create { promise in
             let ref: ThreadSafeReference = .init(to: object)
             
             let operation: BlockOperation = .init {
                 do {
-                    let realmStore: Realm = try self.newRealmStore()
+                    let realmStore: Realm = try self.realmStore(type: T.self)
                     
                     try realmStore.write {
                         guard let _object: T = realmStore.resolve(ref) else {
@@ -123,7 +116,7 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
                 }
             }
             
-            self.queue.addOperation(operation)
+            self.queue(type: T.self).addOperation(operation)
             
             return Disposables.create {
                 operation.cancel()
@@ -131,10 +124,10 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
         }
     }
     
-    func observe() -> Observable<Void> {
+    func observe(type: Object.Type) -> Observable<Void> {
         return .create { observer in
             do {
-                let realmStore: Realm = try self.newRealmStore()
+                let realmStore: Realm = try self.realmStore(type: type)
                 
                 let token: NotificationToken = realmStore.observe { _, realmStore in
                     observer.onNext(())
@@ -150,22 +143,22 @@ class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
         }
     }
     
-    private func configureQueue() {
-        let name: String = String(describing: T.self)
+    private func queue(type: Object.Type) -> OperationQueue {
+        let name: String = String(describing: type)
         
         if let queue: OperationQueue = kOperationQueues[name] {
-            self.queue = queue
+            return queue
         } else {
             let queue: OperationQueue = .init()
             queue.qualityOfService = .userInteractive
             queue.maxConcurrentOperationCount = 1
-            self.queue = queue
             kOperationQueues[name] = queue
+            return queue
         }
     }
     
-    private func newRealmStore() throws -> Realm {
-        let name: String = String(describing: T.self)
+    private func realmStore(type: Object.Type) throws -> Realm {
+        let name: String = String(describing: type)
         
         var config: Realm.Configuration = .defaultConfiguration
         config.fileURL?.deleteLastPathComponent()

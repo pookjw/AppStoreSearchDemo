@@ -19,18 +19,16 @@
 		4FC29BA226BA385C001AADAB /* AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; };
 		4FC29BA326BA385C001AADAB /* AppStoreSearchDemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F301DB0926BBC9A700392276 /* ITSServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301DB0826BBC9A700392276 /* ITSServiceType.swift */; };
+		F301DB0B26BBD60500392276 /* RecentKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301DB0A26BBD60500392276 /* RecentKeyword.swift */; };
 		F32524C426BA66CA00CD64A0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C326BA66CA00CD64A0 /* Network.swift */; };
 		F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C626BA66E100CD64A0 /* NetworkImpl.swift */; };
-		F32524CF26BA6E3F00CD64A0 /* ItunesStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524CE26BA6E3F00CD64A0 /* ItunesStoreTest.swift */; };
+		F32524CF26BA6E3F00CD64A0 /* ITSServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */; };
 		F32524D226BA71B400CD64A0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D126BA71B400CD64A0 /* Log.swift */; };
 		F32524D426BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */; };
-		F32524D626BA738500CD64A0 /* ItunesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D526BA738500CD64A0 /* ItunesStore.swift */; };
-		F32524D926BA7A0A00CD64A0 /* RecentKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D826BA7A0A00CD64A0 /* RecentKeyword.swift */; };
 		F32524DC26BA7B6800CD64A0 /* LocalRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524DB26BA7B6800CD64A0 /* LocalRealm.swift */; };
 		F32524DE26BA7B6E00CD64A0 /* LocalRealmImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524DD26BA7B6E00CD64A0 /* LocalRealmImpl.swift */; };
 		F32524E026BA8DB900CD64A0 /* Results+objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524DF26BA8DB900CD64A0 /* Results+objects.swift */; };
-		F32524E226BA902300CD64A0 /* RecentKeywordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524E126BA902300CD64A0 /* RecentKeywordStore.swift */; };
-		F32524E426BA905000CD64A0 /* RecentKeywordStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524E326BA905000CD64A0 /* RecentKeywordStoreTest.swift */; };
+		F32524E426BA905000CD64A0 /* RecentKeywordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524E326BA905000CD64A0 /* RecentKeywordTest.swift */; };
 		FCE26AFFE2A12ACF864F0675 /* Pods_AppStoreSearchDemoCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3E55EC3CC1C3D77818AC1F /* Pods_AppStoreSearchDemoCoreTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,18 +99,16 @@
 		E78057F32E8523AF803C8117 /* Pods_AppStoreSearchDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC86E3F7C910E2CB508AC8D /* Pods-AppStoreSearchDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemo.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemo/Pods-AppStoreSearchDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F301DB0826BBC9A700392276 /* ITSServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceType.swift; sourceTree = "<group>"; };
+		F301DB0A26BBD60500392276 /* RecentKeyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentKeyword.swift; sourceTree = "<group>"; };
 		F32524C326BA66CA00CD64A0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F32524C626BA66E100CD64A0 /* NetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImpl.swift; sourceTree = "<group>"; };
-		F32524CE26BA6E3F00CD64A0 /* ItunesStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesStoreTest.swift; sourceTree = "<group>"; };
+		F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceTest.swift; sourceTree = "<group>"; };
 		F32524D126BA71B400CD64A0 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoUITests.swift; sourceTree = "<group>"; };
-		F32524D526BA738500CD64A0 /* ItunesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesStore.swift; sourceTree = "<group>"; };
-		F32524D826BA7A0A00CD64A0 /* RecentKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeyword.swift; sourceTree = "<group>"; };
 		F32524DB26BA7B6800CD64A0 /* LocalRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealm.swift; sourceTree = "<group>"; };
 		F32524DD26BA7B6E00CD64A0 /* LocalRealmImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealmImpl.swift; sourceTree = "<group>"; };
 		F32524DF26BA8DB900CD64A0 /* Results+objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+objects.swift"; sourceTree = "<group>"; };
-		F32524E126BA902300CD64A0 /* RecentKeywordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordStore.swift; sourceTree = "<group>"; };
-		F32524E326BA905000CD64A0 /* RecentKeywordStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordStoreTest.swift; sourceTree = "<group>"; };
+		F32524E326BA905000CD64A0 /* RecentKeywordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,8 +248,6 @@
 		F32524C826BA6B8800CD64A0 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				F32524D526BA738500CD64A0 /* ItunesStore.swift */,
-				F32524E126BA902300CD64A0 /* RecentKeywordStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -268,18 +262,10 @@
 		F32524CC26BA6E2300CD64A0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F32524CD26BA6E2C00CD64A0 /* Store */,
+				F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */,
+				F32524E326BA905000CD64A0 /* RecentKeywordTest.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		F32524CD26BA6E2C00CD64A0 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				F32524CE26BA6E3F00CD64A0 /* ItunesStoreTest.swift */,
-				F32524E326BA905000CD64A0 /* RecentKeywordStoreTest.swift */,
-			);
-			path = Store;
 			sourceTree = "<group>";
 		};
 		F32524D026BA71AB00CD64A0 /* Util */ = {
@@ -294,8 +280,8 @@
 		F32524D726BA79FE00CD64A0 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				F32524D826BA7A0A00CD64A0 /* RecentKeyword.swift */,
 				F301DB0826BBC9A700392276 /* ITSServiceType.swift */,
+				F301DB0A26BBD60500392276 /* RecentKeyword.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -629,13 +615,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32524E226BA902300CD64A0 /* RecentKeywordStore.swift in Sources */,
-				F32524D626BA738500CD64A0 /* ItunesStore.swift in Sources */,
-				F32524D926BA7A0A00CD64A0 /* RecentKeyword.swift in Sources */,
 				F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */,
 				F301DB0926BBC9A700392276 /* ITSServiceType.swift in Sources */,
 				F32524DE26BA7B6E00CD64A0 /* LocalRealmImpl.swift in Sources */,
 				F32524DC26BA7B6800CD64A0 /* LocalRealm.swift in Sources */,
+				F301DB0B26BBD60500392276 /* RecentKeyword.swift in Sources */,
 				F32524C426BA66CA00CD64A0 /* Network.swift in Sources */,
 				F32524D226BA71B400CD64A0 /* Log.swift in Sources */,
 				F32524E026BA8DB900CD64A0 /* Results+objects.swift in Sources */,
@@ -646,8 +630,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32524E426BA905000CD64A0 /* RecentKeywordStoreTest.swift in Sources */,
-				F32524CF26BA6E3F00CD64A0 /* ItunesStoreTest.swift in Sources */,
+				F32524E426BA905000CD64A0 /* RecentKeywordTest.swift in Sources */,
+				F32524CF26BA6E3F00CD64A0 /* ITSServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

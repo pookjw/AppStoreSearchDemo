@@ -131,6 +131,25 @@ class LocalImpl<T: RealmSwift.Object>: Local {
         }
     }
     
+    func observe() -> Observable<Void> {
+        return .create { observer in
+            do {
+                let realmStore: Realm = try self.newRealmStore()
+                
+                let token: NotificationToken = realmStore.observe { _, realmStore in
+                    observer.onNext(())
+                }
+                
+                return Disposables.create {
+                    token.invalidate()
+                }
+            } catch {
+                observer.onError(error)
+                return Disposables.create()
+            }
+        }
+    }
+    
     private func configureQueue() {
         let name: String = String(describing: T.self)
         

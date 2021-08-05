@@ -28,10 +28,6 @@ def realmswift_pod
   pod 'RealmSwift', '10.12.0'
 end
 
-def rxrealm_pod
-  pod 'RxRealm', '5.0.1'
-end
-
 def swiftybeaver_pod
   pod 'SwiftyBeaver', '1.9.5'
 end
@@ -61,7 +57,6 @@ target 'AppStoreSearchDemoCore' do
   moya_pod
   rswift_pod
   realmswift_pod
-  rxrealm_pod
   swiftybeaver_pod
   swiftlint_pod
 end

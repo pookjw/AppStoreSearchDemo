@@ -98,4 +98,26 @@ final class RecentKeywordDataStackTest: XCTestCase {
         
         wait(for: [expectation], timeout: 3)
     }
+    
+    func testObserveObjects() {
+        let expectation: XCTestExpectation = .init()
+        
+        recentKeywordDataStack
+            .observe()
+            .subscribe(onNext: { _ in
+                expectation.fulfill()
+            }, onError: { error in
+                XCTFail(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+        
+        recentKeywordDataStack
+            .create { _ in }
+            .subscribe(onFailure: { error in
+                XCTFail(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+        
+        wait(for: [expectation], timeout: 3)
+    }
 }

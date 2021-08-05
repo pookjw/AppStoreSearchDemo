@@ -34,4 +34,7 @@ protocol Local {
     
     // Delete
     func delete(_ object: Object) -> Completable
+    
+    // Observe
+    func observe() -> Observable<Void>
 }

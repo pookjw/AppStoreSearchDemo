@@ -11,5 +11,5 @@ import RealmSwift
 final class RecentKeyword: Object {
     @Persisted(primaryKey: true) var identity: UUID = .init()
     @Persisted var keyword: String? = nil
-    @Persisted var timestamp: Date? = nil
+    @Persisted var timestamp: Date = Date()
 }

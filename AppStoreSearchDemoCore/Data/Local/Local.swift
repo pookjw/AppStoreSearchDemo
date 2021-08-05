@@ -12,6 +12,15 @@ import RxSwift
 protocol Local {
     associatedtype Object: RealmSwift.Object
     
+    // Read
     func objects(predicate: NSPredicate?) -> Single<[Object]>
-    func add(_ object: Object) -> Completable
+    
+    // Create
+    func new(block: @escaping ((Object) -> ())) -> Single<Object>
+    
+    // Modify
+    func modify(_ object: Object, block: @escaping ((Object) -> ())) -> Completable
+    
+    // Delete
+    func delete(_ object: Object) -> Completable
 }

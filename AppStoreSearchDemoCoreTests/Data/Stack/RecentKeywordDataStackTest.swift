@@ -19,13 +19,55 @@ final class RecentKeywordDataStackTest: XCTestCase {
         initializeLog()
     }
     
-    func testAddKeyword() {
+    func testNewKeyword() {
         let expectation: XCTestExpectation = .init()
         
-        let recentKeyword: RecentKeyword = .init()
+        recentKeywordDataStack
+            .new { recentKeyword in
+                recentKeyword.keyword = "도로도로"
+            }
+            .subscribe { _ in
+                expectation.fulfill()
+            } onFailure: { error in
+                XCTFail(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+
+        
+        wait(for: [expectation], timeout: 3)
+    }
+    
+    func testLoadObjects() {
+        let expectation: XCTestExpectation = .init()
         
         recentKeywordDataStack
-            .add(recentKeyword)
+            .objects(predicate: nil)
+            .subscribe { recentKeywords in
+                recentKeywords.forEach { recentKeyword in
+                    print(recentKeyword.keyword ?? "nil")
+                }
+                expectation.fulfill()
+            } onFailure: { error in
+                XCTFail(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+        
+        wait(for: [expectation], timeout: 3)
+    }
+    
+    func testModifyObject() {
+        let expectation: XCTestExpectation = .init()
+        
+        recentKeywordDataStack
+            .objects(predicate: nil)
+            .flatMapCompletable { keywords -> Completable in
+                let random: RecentKeyword = keywords.randomElement()!
+                
+                return self.recentKeywordDataStack
+                    .modify(random) { keyword in
+                        keyword.keyword = "티비리앙"
+                    }
+            }
             .subscribe {
                 expectation.fulfill()
             } onError: { error in
@@ -33,6 +75,27 @@ final class RecentKeywordDataStackTest: XCTestCase {
             }
             .disposed(by: disposeBag)
         
-        wait(for: [expectation], timeout: 30)
+        wait(for: [expectation], timeout: 3)
+    }
+    
+    func testDeleteObject() {
+        let expectation: XCTestExpectation = .init()
+        
+        recentKeywordDataStack
+            .objects(predicate: nil)
+            .flatMapCompletable { keywords -> Completable in
+                let random: RecentKeyword = keywords.randomElement()!
+                
+                return self.recentKeywordDataStack
+                    .delete(random)
+            }
+            .subscribe {
+                expectation.fulfill()
+            } onError: { error in
+                XCTFail(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+        
+        wait(for: [expectation], timeout: 3)
     }
 }

@@ -9,31 +9,33 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-private var kRealmStores: [String: Realm] = [:]
 private var kOperationQueues: [String: OperationQueue] = [:]
 
 class LocalImpl<T: RealmSwift.Object>: Local {
     typealias Object = T
     
-    private var realmStore: Realm!
     private var queue: OperationQueue!
     
     init() {
         configureQueue()
-        configureRealmStore()
     }
     
     func objects(predicate: NSPredicate?) -> Single<[T]> {
         return .create { promise in
             
             let operation: BlockOperation = .init {
-                var results: Results<T> = self.realmStore.objects(T.self)
-                
-                if let predicate: NSPredicate = predicate {
-                    results = results.filter(predicate)
+                do {
+                    let realmStore: Realm = try self.newRealmStore()
+                    var results: Results<T> = realmStore.objects(T.self)
+                    
+                    if let predicate: NSPredicate = predicate {
+                        results = results.filter(predicate)
+                    }
+                    
+                    promise(.success(results.objects))
+                } catch {
+                    promise(.failure(error))
                 }
-                
-                promise(.success(results.objects))
             }
             
             self.queue.addOperation(operation)
@@ -44,16 +46,48 @@ class LocalImpl<T: RealmSwift.Object>: Local {
         }
     }
     
-    func add(_ object: T) -> Completable {
+    func new(block: @escaping ((T) -> ())) -> Single<T> {
         return .create { promise in
             
             let operation: BlockOperation = .init {
-                print(Thread.current)
                 do {
-                    try self.realmStore.write {
-                        self.realmStore.add(object)
+                    let realmStore: Realm = try self.newRealmStore()
+                    let object: T = .init()
+                    block(object)
+                    
+                    try realmStore.write {
+                        realmStore.add(object)
+                        promise(.success(object))
                     }
-                    promise(.completed)
+                } catch {
+                    promise(.failure(error))
+                }
+            }
+            
+            OperationQueue.main.addOperation(operation)
+            
+            return Disposables.create {
+                // TODO
+            }
+        }
+    }
+    
+    func modify(_ object: T, block: @escaping ((T) -> ())) -> Completable {
+        return .create { promise in
+            
+            let ref: ThreadSafeReference = .init(to: object)
+            
+            let operation: BlockOperation = .init {
+                do {
+                    let realmStore: Realm = try self.newRealmStore()
+                    
+                    try realmStore.write {
+                        guard let _object: T = realmStore.resolve(ref) else {
+                            fatalError("Realm Thread Error")
+                        }
+                        block(_object)
+                        promise(.completed)
+                    }
                 } catch {
                     promise(.error(error))
                 }
@@ -61,9 +95,33 @@ class LocalImpl<T: RealmSwift.Object>: Local {
             
             self.queue.addOperation(operation)
             
-            return Disposables.create {
-                operation.cancel()
+            return Disposables.create()
+        }
+    }
+    
+    func delete(_ object: T) -> Completable {
+        return .create { promise in
+            let ref: ThreadSafeReference = .init(to: object)
+            
+            let operation: BlockOperation = .init {
+                do {
+                    let realmStore: Realm = try self.newRealmStore()
+                    
+                    try realmStore.write {
+                        guard let _object: T = realmStore.resolve(ref) else {
+                            fatalError("Realm Thread Error")
+                        }
+                        realmStore.delete(_object)
+                        promise(.completed)
+                    }
+                } catch {
+                    promise(.error(error))
+                }
             }
+            
+            self.queue.addOperation(operation)
+            
+            return Disposables.create()
         }
     }
     
@@ -75,35 +133,21 @@ class LocalImpl<T: RealmSwift.Object>: Local {
         } else {
             let queue: OperationQueue = .init()
             queue.qualityOfService = .userInteractive
+            queue.maxConcurrentOperationCount = 1
             self.queue = queue
             kOperationQueues[name] = queue
         }
     }
     
-    private func configureRealmStore() {
-        let semaphore: DispatchSemaphore = .init(value: 0)
+    private func newRealmStore() throws -> Realm {
+        let name: String = String(describing: T.self)
         
-        queue.addOperation {
-            let name: String = String(describing: T.self)
-
-            if let realmStore: Realm = kRealmStores[name] {
-                self.realmStore = realmStore
-            } else {
-                var config: Realm.Configuration = .defaultConfiguration
-                config.fileURL?.deleteLastPathComponent()
-                config.fileURL?.appendPathComponent(name)
-                config.fileURL?.appendPathExtension("realm")
-                
-                let realmStore: Realm = try! .init(configuration: config)
-                self.realmStore = realmStore
-                kRealmStores[name] = realmStore
-            }
-            
-            print(Thread.current)
-            
-            semaphore.signal()
-        }
+        var config: Realm.Configuration = .defaultConfiguration
+        config.fileURL?.deleteLastPathComponent()
+        config.fileURL?.appendPathComponent(name)
+        config.fileURL?.appendPathExtension("realm")
         
-        semaphore.wait()
+        let realmStore: Realm = try .init(configuration: config)
+        return realmStore
     }
 }

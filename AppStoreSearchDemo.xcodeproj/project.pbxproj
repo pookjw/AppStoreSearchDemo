@@ -236,6 +236,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F301DB0C26BBE05F00392276 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F301DB0D26BBE06600392276 /* RepoImpl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepoImpl;
+			sourceTree = "<group>";
+		};
+		F301DB0E26BBE06F00392276 /* RepoIntf */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepoIntf;
+			sourceTree = "<group>";
+		};
 		F32524C526BA66CE00CD64A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,13 +264,6 @@
 				F32524C626BA66E100CD64A0 /* NetworkImpl.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		F32524C826BA6B8800CD64A0 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
 			sourceTree = "<group>";
 		};
 		F32524CB26BA6E1800CD64A0 /* Domain */ = {
@@ -298,7 +312,7 @@
 		F36F5E9626BA662000966EE3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F32524C826BA6B8800CD64A0 /* Store */,
+				F301DB0D26BBE06600392276 /* RepoImpl */,
 				F32524C526BA66CE00CD64A0 /* Network */,
 				F32524DA26BA7B3E00CD64A0 /* Local */,
 			);
@@ -308,6 +322,8 @@
 		F36F5E9726BA662600966EE3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F301DB0E26BBE06F00392276 /* RepoIntf */,
+				F301DB0C26BBE05F00392276 /* UseCase */,
 				F32524D726BA79FE00CD64A0 /* Entity */,
 			);
 			path = Domain;

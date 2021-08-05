@@ -46,7 +46,7 @@ class LocalImpl<T: RealmSwift.Object>: Local {
         }
     }
     
-    func new(block: @escaping ((T) -> ())) -> Single<T> {
+    func create(block: @escaping ((T) -> ())) -> Single<T> {
         return .create { promise in
             
             let operation: BlockOperation = .init {
@@ -67,7 +67,7 @@ class LocalImpl<T: RealmSwift.Object>: Local {
             OperationQueue.main.addOperation(operation)
             
             return Disposables.create {
-                // TODO
+                operation.cancel()
             }
         }
     }
@@ -83,7 +83,8 @@ class LocalImpl<T: RealmSwift.Object>: Local {
                     
                     try realmStore.write {
                         guard let _object: T = realmStore.resolve(ref) else {
-                            fatalError("Realm Thread Error")
+                            promise(.error(LocalError.realmThreadSolveFailed))
+                            return
                         }
                         block(_object)
                         promise(.completed)
@@ -95,7 +96,9 @@ class LocalImpl<T: RealmSwift.Object>: Local {
             
             self.queue.addOperation(operation)
             
-            return Disposables.create()
+            return Disposables.create {
+                operation.cancel()
+            }
         }
     }
     
@@ -109,7 +112,8 @@ class LocalImpl<T: RealmSwift.Object>: Local {
                     
                     try realmStore.write {
                         guard let _object: T = realmStore.resolve(ref) else {
-                            fatalError("Realm Thread Error")
+                            promise(.error(LocalError.realmThreadSolveFailed))
+                            return
                         }
                         realmStore.delete(_object)
                         promise(.completed)
@@ -121,7 +125,9 @@ class LocalImpl<T: RealmSwift.Object>: Local {
             
             self.queue.addOperation(operation)
             
-            return Disposables.create()
+            return Disposables.create {
+                operation.cancel()
+            }
         }
     }
     

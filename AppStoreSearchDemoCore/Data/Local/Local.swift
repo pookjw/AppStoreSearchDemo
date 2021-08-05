@@ -9,6 +9,17 @@ import Foundation
 import RealmSwift
 import RxSwift
 
+enum LocalError: Error, LocalizedError {
+    case realmThreadSolveFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .realmThreadSolveFailed:
+            return "RealmStore Solve 에러 (번역)"
+        }
+    }
+}
+
 protocol Local {
     associatedtype Object: RealmSwift.Object
     
@@ -16,7 +27,7 @@ protocol Local {
     func objects(predicate: NSPredicate?) -> Single<[Object]>
     
     // Create
-    func new(block: @escaping ((Object) -> ())) -> Single<Object>
+    func create(block: @escaping ((Object) -> ())) -> Single<Object>
     
     // Modify
     func modify(_ object: Object, block: @escaping ((Object) -> ())) -> Completable

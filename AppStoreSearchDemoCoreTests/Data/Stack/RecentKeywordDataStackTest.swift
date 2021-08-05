@@ -19,11 +19,11 @@ final class RecentKeywordDataStackTest: XCTestCase {
         initializeLog()
     }
     
-    func testNewKeyword() {
+    func testCreateKeyword() {
         let expectation: XCTestExpectation = .init()
         
         recentKeywordDataStack
-            .new { recentKeyword in
+            .create { recentKeyword in
                 recentKeyword.keyword = "도로도로"
             }
             .subscribe { _ in

@@ -1,5 +1,5 @@
 //
-//  Local.swift
+//  LocalRealm.swift
 //  AppStoreSearchDemoCore
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -20,7 +20,7 @@ enum LocalError: Error, LocalizedError {
     }
 }
 
-protocol Local {
+protocol LocalRealm {
     associatedtype Object: RealmSwift.Object
     
     // Read

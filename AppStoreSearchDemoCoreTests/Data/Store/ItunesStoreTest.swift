@@ -1,5 +1,5 @@
 //
-//  ItsDataStackTest.swift
+//  ItunesStoreTest.swift
 //  AppStoreSearchDemoCoreTests
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -10,8 +10,8 @@ import XCTest
 import RxSwift
 @testable import AppStoreSearchDemoCore
 
-final class ItsDataStackTest: XCTestCase {
-    private let itsDataStack: ItsDataStack = .init()
+final class ItunesStoreTest: XCTestCase {
+    private let itunesStore: ItunesStore = .init()
     private var disposeBag: DisposeBag = .init()
     
     override func setUp() {
@@ -22,7 +22,7 @@ final class ItsDataStackTest: XCTestCase {
     func testSoftwareRequest() {
         let expectation: XCTestExpectation = .init()
         
-        itsDataStack
+        itunesStore
             .request(.software("DoroDoro"))
             .subscribe { data in
                 guard let string: String = String(data: data, encoding: .utf8) else {
@@ -42,7 +42,7 @@ final class ItsDataStackTest: XCTestCase {
     func testLookupRequest() {
         let expectation: XCTestExpectation = .init()
         
-        itsDataStack
+        itunesStore
             .request(.lookup("1557114617"))
             .subscribe { data in
                 guard let string: String = String(data: data, encoding: .utf8) else {

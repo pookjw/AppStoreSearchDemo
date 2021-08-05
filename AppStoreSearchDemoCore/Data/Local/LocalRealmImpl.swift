@@ -1,5 +1,5 @@
 //
-//  LocalImpl.swift
+//  LocalRealmImpl.swift
 //  AppStoreSearchDemoCore
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -11,7 +11,7 @@ import RxSwift
 
 private var kOperationQueues: [String: OperationQueue] = [:]
 
-class LocalImpl<T: RealmSwift.Object>: Local {
+class LocalRealmImpl<T: RealmSwift.Object>: LocalRealm {
     typealias Object = T
     
     private var queue: OperationQueue!

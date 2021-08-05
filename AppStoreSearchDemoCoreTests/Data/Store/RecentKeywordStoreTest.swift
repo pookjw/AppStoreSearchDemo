@@ -1,5 +1,5 @@
 //
-//  RecentKeywordDataStackTest.swift
+//  RecentKeywordStoreTest.swift
 //  AppStoreSearchDemoCoreTests
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -10,8 +10,8 @@ import XCTest
 import RxSwift
 @testable import AppStoreSearchDemoCore
 
-final class RecentKeywordDataStackTest: XCTestCase {
-    private let recentKeywordDataStack: RecentKeywordDataStack = .init()
+final class RecentKeywordStoreTest: XCTestCase {
+    private let recentKeywordStore: RecentKeywordStore = .init()
     private var disposeBag: DisposeBag = .init()
     
     override func setUp() {
@@ -22,7 +22,7 @@ final class RecentKeywordDataStackTest: XCTestCase {
     func testCreateKeyword() {
         let expectation: XCTestExpectation = .init()
         
-        recentKeywordDataStack
+        recentKeywordStore
             .create { recentKeyword in
                 recentKeyword.keyword = "도로도로"
             }
@@ -40,7 +40,7 @@ final class RecentKeywordDataStackTest: XCTestCase {
     func testLoadObjects() {
         let expectation: XCTestExpectation = .init()
         
-        recentKeywordDataStack
+        recentKeywordStore
             .objects(predicate: nil)
             .subscribe { recentKeywords in
                 recentKeywords.forEach { recentKeyword in
@@ -58,12 +58,12 @@ final class RecentKeywordDataStackTest: XCTestCase {
     func testModifyObject() {
         let expectation: XCTestExpectation = .init()
         
-        recentKeywordDataStack
+        recentKeywordStore
             .objects(predicate: nil)
             .flatMapCompletable { keywords -> Completable in
                 let random: RecentKeyword = keywords.randomElement()!
                 
-                return self.recentKeywordDataStack
+                return self.recentKeywordStore
                     .modify(random) { keyword in
                         keyword.keyword = "티비리앙"
                     }
@@ -81,12 +81,12 @@ final class RecentKeywordDataStackTest: XCTestCase {
     func testDeleteObject() {
         let expectation: XCTestExpectation = .init()
         
-        recentKeywordDataStack
+        recentKeywordStore
             .objects(predicate: nil)
             .flatMapCompletable { keywords -> Completable in
                 let random: RecentKeyword = keywords.randomElement()!
                 
-                return self.recentKeywordDataStack
+                return self.recentKeywordStore
                     .delete(random)
             }
             .subscribe {
@@ -102,7 +102,7 @@ final class RecentKeywordDataStackTest: XCTestCase {
     func testObserveObjects() {
         let expectation: XCTestExpectation = .init()
         
-        recentKeywordDataStack
+        recentKeywordStore
             .observe()
             .subscribe(onNext: { _ in
                 expectation.fulfill()
@@ -111,7 +111,7 @@ final class RecentKeywordDataStackTest: XCTestCase {
             })
             .disposed(by: disposeBag)
         
-        recentKeywordDataStack
+        recentKeywordStore
             .create { _ in }
             .subscribe(onFailure: { error in
                 XCTFail(error.localizedDescription)

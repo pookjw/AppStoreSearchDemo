@@ -1,13 +1,12 @@
 //
-//  ItsDataStack.swift
+//  ITSServiceType.swift
 //  AppStoreSearchDemoCore
 //
-//  Created by Jinwoo Kim on 8/4/21.
+//  Created by Jinwoo Kim on 8/5/21.
 //
 
 import Foundation
 import Moya
-import RxSwift
 
 enum ITSServiceType: Moya.TargetType {
     case software(String)
@@ -54,5 +53,3 @@ enum ITSServiceType: Moya.TargetType {
         nil
     }
 }
-
-final class ItsDataStack: NetworkImpl<ITSServiceType> {}

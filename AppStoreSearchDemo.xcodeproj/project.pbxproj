@@ -9,9 +9,26 @@
 /* Begin PBXBuildFile section */
 		094240FABC099483D5BBA63C /* Pods_AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */; };
 		3B1AFA62D274519ADFD7FFF8 /* Pods_AppStoreSearchDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78057F32E8523AF803C8117 /* Pods_AppStoreSearchDemo.framework */; };
+		4F6ACF8926C1137900141987 /* ITSServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8826C1137900141987 /* ITSServiceRepository.swift */; };
+		4F6ACF8B26C115C200141987 /* SoftwareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8A26C115C200141987 /* SoftwareInfo.swift */; };
+		4F6ACF8E26C119D100141987 /* SoftwareInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8D26C119D100141987 /* SoftwareInfoDTO.swift */; };
+		4F6ACF9126C11EED00141987 /* ITSServiceRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9026C11EED00141987 /* ITSServiceRepositoryImpl.swift */; };
+		4F6ACF9326C11FFF00141987 /* ITSServiceRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9226C11FFF00141987 /* ITSServiceRepositoryTest.swift */; };
+		4F6ACF9626C1212400141987 /* GetSoftwareInfosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9526C1212400141987 /* GetSoftwareInfosUseCase.swift */; };
+		4F6ACF9826C1219000141987 /* RecentKeywordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9726C1219000141987 /* RecentKeywordRepository.swift */; };
+		4F6ACF9A26C1239C00141987 /* RecentKeywordRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9926C1239C00141987 /* RecentKeywordRepositoryImpl.swift */; };
+		4F6ACF9C26C1245C00141987 /* GetRecentKeywordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9B26C1245C00141987 /* GetRecentKeywordUseCase.swift */; };
+		4F6ACF9E26C126FC00141987 /* CreateRecentKeywordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9D26C126FC00141987 /* CreateRecentKeywordUseCase.swift */; };
+		4F6ACFA026C1275000141987 /* ObserveRecentKeywordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF9F26C1275000141987 /* ObserveRecentKeywordUseCase.swift */; };
+		4F6ACFA826C127D100141987 /* SoftwareInfoDTOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFA726C127D100141987 /* SoftwareInfoDTOTest.swift */; };
+		4F6ACFAD26C1297000141987 /* software_request_data_example.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F6ACFAA26C1280D00141987 /* software_request_data_example.json */; };
+		4F6ACFAF26C12A3100141987 /* RecentKeywordRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFAE26C12A3100141987 /* RecentKeywordRepositoryTest.swift */; };
+		4F6ACFB126C12BD600141987 /* GetSoftwareInfosUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB026C12BD600141987 /* GetSoftwareInfosUseCaseTest.swift */; };
+		4F6ACFB326C12C5600141987 /* GetRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB226C12C5600141987 /* GetRecentKeywordUseCaseTest.swift */; };
+		4F6ACFB526C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB426C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift */; };
+		4F6ACFB726C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */; };
 		4FC29B5D26BA360C001AADAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B5C26BA360C001AADAB /* AppDelegate.swift */; };
 		4FC29B6126BA360C001AADAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B6026BA360C001AADAB /* ViewController.swift */; };
-		4FC29B6426BA360C001AADAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6226BA360C001AADAB /* Main.storyboard */; };
 		4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6526BA360F001AADAB /* Assets.xcassets */; };
 		4FC29B6926BA360F001AADAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6726BA360F001AADAB /* LaunchScreen.storyboard */; };
 		4FC29B9726BA385C001AADAB /* AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC29B8F26BA385C001AADAB /* AppStoreSearchDemoCore.framework */; };
@@ -22,7 +39,7 @@
 		F301DB0B26BBD60500392276 /* RecentKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301DB0A26BBD60500392276 /* RecentKeyword.swift */; };
 		F32524C426BA66CA00CD64A0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C326BA66CA00CD64A0 /* Network.swift */; };
 		F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524C626BA66E100CD64A0 /* NetworkImpl.swift */; };
-		F32524CF26BA6E3F00CD64A0 /* ITSServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */; };
+		F32524CF26BA6E3F00CD64A0 /* ITSServiceNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524CE26BA6E3F00CD64A0 /* ITSServiceNetworkTest.swift */; };
 		F32524D226BA71B400CD64A0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D126BA71B400CD64A0 /* Log.swift */; };
 		F32524D426BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */; };
 		F32524DC26BA7B6800CD64A0 /* LocalRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32524DB26BA7B6800CD64A0 /* LocalRealm.swift */; };
@@ -81,10 +98,27 @@
 		01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCore.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCore/Pods-AppStoreSearchDemoCore.release.xcconfig"; sourceTree = "<group>"; };
 		11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C6A9131AF0900CF015D926 /* Pods-AppStoreSearchDemoCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F6ACF8826C1137900141987 /* ITSServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceRepository.swift; sourceTree = "<group>"; };
+		4F6ACF8A26C115C200141987 /* SoftwareInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareInfo.swift; sourceTree = "<group>"; };
+		4F6ACF8D26C119D100141987 /* SoftwareInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareInfoDTO.swift; sourceTree = "<group>"; };
+		4F6ACF9026C11EED00141987 /* ITSServiceRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceRepositoryImpl.swift; sourceTree = "<group>"; };
+		4F6ACF9226C11FFF00141987 /* ITSServiceRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceRepositoryTest.swift; sourceTree = "<group>"; };
+		4F6ACF9526C1212400141987 /* GetSoftwareInfosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSoftwareInfosUseCase.swift; sourceTree = "<group>"; };
+		4F6ACF9726C1219000141987 /* RecentKeywordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepository.swift; sourceTree = "<group>"; };
+		4F6ACF9926C1239C00141987 /* RecentKeywordRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepositoryImpl.swift; sourceTree = "<group>"; };
+		4F6ACF9B26C1245C00141987 /* GetRecentKeywordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentKeywordUseCase.swift; sourceTree = "<group>"; };
+		4F6ACF9D26C126FC00141987 /* CreateRecentKeywordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecentKeywordUseCase.swift; sourceTree = "<group>"; };
+		4F6ACF9F26C1275000141987 /* ObserveRecentKeywordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveRecentKeywordUseCase.swift; sourceTree = "<group>"; };
+		4F6ACFA726C127D100141987 /* SoftwareInfoDTOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareInfoDTOTest.swift; sourceTree = "<group>"; };
+		4F6ACFAA26C1280D00141987 /* software_request_data_example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = software_request_data_example.json; sourceTree = "<group>"; };
+		4F6ACFAE26C12A3100141987 /* RecentKeywordRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepositoryTest.swift; sourceTree = "<group>"; };
+		4F6ACFB026C12BD600141987 /* GetSoftwareInfosUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSoftwareInfosUseCaseTest.swift; sourceTree = "<group>"; };
+		4F6ACFB226C12C5600141987 /* GetRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
+		4F6ACFB426C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
+		4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
 		4FC29B5926BA360C001AADAB /* AppStoreSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B5C26BA360C001AADAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC29B6026BA360C001AADAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4FC29B6326BA360C001AADAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4FC29B6526BA360F001AADAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FC29B6826BA360F001AADAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FC29B6A26BA360F001AADAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +136,7 @@
 		F301DB0A26BBD60500392276 /* RecentKeyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentKeyword.swift; sourceTree = "<group>"; };
 		F32524C326BA66CA00CD64A0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F32524C626BA66E100CD64A0 /* NetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImpl.swift; sourceTree = "<group>"; };
-		F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceTest.swift; sourceTree = "<group>"; };
+		F32524CE26BA6E3F00CD64A0 /* ITSServiceNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceNetworkTest.swift; sourceTree = "<group>"; };
 		F32524D126BA71B400CD64A0 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F32524D326BA726F00CD64A0 /* AppStoreSearchDemoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreSearchDemoUITests.swift; sourceTree = "<group>"; };
 		F32524DB26BA7B6800CD64A0 /* LocalRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRealm.swift; sourceTree = "<group>"; };
@@ -158,6 +192,160 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4F6ACF8726C1137200141987 /* RepoInf */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF8826C1137900141987 /* ITSServiceRepository.swift */,
+				4F6ACF9726C1219000141987 /* RecentKeywordRepository.swift */,
+			);
+			path = RepoInf;
+			sourceTree = "<group>";
+		};
+		4F6ACF8C26C119C000141987 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF8D26C119D100141987 /* SoftwareInfoDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		4F6ACF8F26C11EE100141987 /* RepoImpl */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF9026C11EED00141987 /* ITSServiceRepositoryImpl.swift */,
+				4F6ACF9926C1239C00141987 /* RecentKeywordRepositoryImpl.swift */,
+			);
+			path = RepoImpl;
+			sourceTree = "<group>";
+		};
+		4F6ACF9426C1211700141987 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFBB26C12E4000141987 /* SoftwareInfo */,
+				4F6ACFBC26C12E4700141987 /* RecentKeyword */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4F6ACFA126C1279700141987 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F32524CE26BA6E3F00CD64A0 /* ITSServiceNetworkTest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4F6ACFA226C127A900141987 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				F32524E326BA905000CD64A0 /* RecentKeywordTest.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4F6ACFA326C127B000141987 /* RepoImpl */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF9226C11FFF00141987 /* ITSServiceRepositoryTest.swift */,
+				4F6ACFAE26C12A3100141987 /* RecentKeywordRepositoryTest.swift */,
+			);
+			path = RepoImpl;
+			sourceTree = "<group>";
+		};
+		4F6ACFA426C127B700141987 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFA526C127BE00141987 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4F6ACFA526C127BE00141987 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFBE26C12E5900141987 /* SoftwareInfo */,
+				4F6ACFBF26C12E6000141987 /* RecentKeyword */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4F6ACFA626C127C300141987 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFA726C127D100141987 /* SoftwareInfoDTOTest.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		4F6ACFAC26C1295200141987 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFAA26C1280D00141987 /* software_request_data_example.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F6ACFB826C12D5900141987 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF8A26C115C200141987 /* SoftwareInfo.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		4F6ACFB926C12D5D00141987 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				F301DB0826BBC9A700392276 /* ITSServiceType.swift */,
+				F301DB0A26BBD60500392276 /* RecentKeyword.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		4F6ACFBA26C12D7900141987 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F32524DF26BA8DB900CD64A0 /* Results+objects.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F6ACFBB26C12E4000141987 /* SoftwareInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF9526C1212400141987 /* GetSoftwareInfosUseCase.swift */,
+			);
+			path = SoftwareInfo;
+			sourceTree = "<group>";
+		};
+		4F6ACFBC26C12E4700141987 /* RecentKeyword */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACF9B26C1245C00141987 /* GetRecentKeywordUseCase.swift */,
+				4F6ACF9D26C126FC00141987 /* CreateRecentKeywordUseCase.swift */,
+				4F6ACF9F26C1275000141987 /* ObserveRecentKeywordUseCase.swift */,
+			);
+			path = RecentKeyword;
+			sourceTree = "<group>";
+		};
+		4F6ACFBE26C12E5900141987 /* SoftwareInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFB026C12BD600141987 /* GetSoftwareInfosUseCaseTest.swift */,
+			);
+			path = SoftwareInfo;
+			sourceTree = "<group>";
+		};
+		4F6ACFBF26C12E6000141987 /* RecentKeyword */ = {
+			isa = PBXGroup;
+			children = (
+				4F6ACFB226C12C5600141987 /* GetRecentKeywordUseCaseTest.swift */,
+				4F6ACFB426C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift */,
+				4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */,
+			);
+			path = RecentKeyword;
+			sourceTree = "<group>";
+		};
 		4FC29B5026BA360C001AADAB = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +375,6 @@
 			children = (
 				4FC29B5C26BA360C001AADAB /* AppDelegate.swift */,
 				4FC29B6026BA360C001AADAB /* ViewController.swift */,
-				4FC29B6226BA360C001AADAB /* Main.storyboard */,
 				4FC29B6526BA360F001AADAB /* Assets.xcassets */,
 				4FC29B6726BA360F001AADAB /* LaunchScreen.storyboard */,
 				4FC29B6A26BA360F001AADAB /* Info.plist */,
@@ -207,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC29B9126BA385C001AADAB /* AppStoreSearchDemoCore.h */,
+				4F6ACFAC26C1295200141987 /* Resources */,
 				F32524D026BA71AB00CD64A0 /* Util */,
 				F36F5E9726BA662600966EE3 /* Domain */,
 				F36F5E9626BA662000966EE3 /* Data */,
@@ -217,7 +405,7 @@
 		4FC29B9C26BA385C001AADAB /* AppStoreSearchDemoCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				F32524CB26BA6E1800CD64A0 /* Domain */,
+				4F6ACFA426C127B700141987 /* Domain */,
 				F32524CC26BA6E2300CD64A0 /* Data */,
 			);
 			path = AppStoreSearchDemoCoreTests;
@@ -236,27 +424,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F301DB0C26BBE05F00392276 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		F301DB0D26BBE06600392276 /* RepoImpl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RepoImpl;
-			sourceTree = "<group>";
-		};
-		F301DB0E26BBE06F00392276 /* RepoIntf */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RepoIntf;
-			sourceTree = "<group>";
-		};
 		F32524C526BA66CE00CD64A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,18 +433,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		F32524CB26BA6E1800CD64A0 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		F32524CC26BA6E2300CD64A0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F32524CE26BA6E3F00CD64A0 /* ITSServiceTest.swift */,
-				F32524E326BA905000CD64A0 /* RecentKeywordTest.swift */,
+				4F6ACFA326C127B000141987 /* RepoImpl */,
+				4F6ACFA626C127C300141987 /* DTO */,
+				4F6ACFA126C1279700141987 /* Network */,
+				4F6ACFA226C127A900141987 /* Local */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -286,7 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				F32524D126BA71B400CD64A0 /* Log.swift */,
-				F32524DF26BA8DB900CD64A0 /* Results+objects.swift */,
+				4F6ACFBA26C12D7900141987 /* Extensions */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -294,8 +456,8 @@
 		F32524D726BA79FE00CD64A0 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				F301DB0826BBC9A700392276 /* ITSServiceType.swift */,
-				F301DB0A26BBD60500392276 /* RecentKeyword.swift */,
+				4F6ACFB826C12D5900141987 /* Public */,
+				4F6ACFB926C12D5D00141987 /* Internal */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -312,7 +474,8 @@
 		F36F5E9626BA662000966EE3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F301DB0D26BBE06600392276 /* RepoImpl */,
+				4F6ACF8F26C11EE100141987 /* RepoImpl */,
+				4F6ACF8C26C119C000141987 /* DTO */,
 				F32524C526BA66CE00CD64A0 /* Network */,
 				F32524DA26BA7B3E00CD64A0 /* Local */,
 			);
@@ -322,8 +485,8 @@
 		F36F5E9726BA662600966EE3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F301DB0E26BBE06F00392276 /* RepoIntf */,
-				F301DB0C26BBE05F00392276 /* UseCase */,
+				4F6ACF9426C1211700141987 /* UseCase */,
+				4F6ACF8726C1137200141987 /* RepoInf */,
 				F32524D726BA79FE00CD64A0 /* Entity */,
 			);
 			path = Domain;
@@ -479,7 +642,6 @@
 			files = (
 				4FC29B6926BA360F001AADAB /* LaunchScreen.storyboard in Resources */,
 				4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */,
-				4FC29B6426BA360C001AADAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +656,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6ACFAD26C1297000141987 /* software_request_data_example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,13 +794,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6ACF8B26C115C200141987 /* SoftwareInfo.swift in Sources */,
 				F32524C726BA66E100CD64A0 /* NetworkImpl.swift in Sources */,
 				F301DB0926BBC9A700392276 /* ITSServiceType.swift in Sources */,
+				4F6ACF9E26C126FC00141987 /* CreateRecentKeywordUseCase.swift in Sources */,
 				F32524DE26BA7B6E00CD64A0 /* LocalRealmImpl.swift in Sources */,
+				4F6ACF9A26C1239C00141987 /* RecentKeywordRepositoryImpl.swift in Sources */,
 				F32524DC26BA7B6800CD64A0 /* LocalRealm.swift in Sources */,
+				4F6ACF8926C1137900141987 /* ITSServiceRepository.swift in Sources */,
+				4F6ACF9C26C1245C00141987 /* GetRecentKeywordUseCase.swift in Sources */,
+				4F6ACFA026C1275000141987 /* ObserveRecentKeywordUseCase.swift in Sources */,
 				F301DB0B26BBD60500392276 /* RecentKeyword.swift in Sources */,
 				F32524C426BA66CA00CD64A0 /* Network.swift in Sources */,
+				4F6ACF9126C11EED00141987 /* ITSServiceRepositoryImpl.swift in Sources */,
 				F32524D226BA71B400CD64A0 /* Log.swift in Sources */,
+				4F6ACF9826C1219000141987 /* RecentKeywordRepository.swift in Sources */,
+				4F6ACF8E26C119D100141987 /* SoftwareInfoDTO.swift in Sources */,
+				4F6ACF9626C1212400141987 /* GetSoftwareInfosUseCase.swift in Sources */,
 				F32524E026BA8DB900CD64A0 /* Results+objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,7 +820,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32524E426BA905000CD64A0 /* RecentKeywordTest.swift in Sources */,
-				F32524CF26BA6E3F00CD64A0 /* ITSServiceTest.swift in Sources */,
+				4F6ACF9326C11FFF00141987 /* ITSServiceRepositoryTest.swift in Sources */,
+				4F6ACFB726C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift in Sources */,
+				4F6ACFB526C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift in Sources */,
+				4F6ACFAF26C12A3100141987 /* RecentKeywordRepositoryTest.swift in Sources */,
+				4F6ACFB326C12C5600141987 /* GetRecentKeywordUseCaseTest.swift in Sources */,
+				4F6ACFB126C12BD600141987 /* GetSoftwareInfosUseCaseTest.swift in Sources */,
+				F32524CF26BA6E3F00CD64A0 /* ITSServiceNetworkTest.swift in Sources */,
+				4F6ACFA826C127D100141987 /* SoftwareInfoDTOTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,14 +857,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4FC29B6226BA360C001AADAB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FC29B6326BA360C001AADAB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4FC29B6726BA360F001AADAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

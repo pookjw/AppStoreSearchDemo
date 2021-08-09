@@ -24,11 +24,14 @@ protocol LocalRealm {
     // Read
     func objects<T: Object>(predicate: NSPredicate?) -> Single<[T]>
     
-    // Create
+    // Read with sort
+    func objects<T: Object>(predicate: NSPredicate?, sortKV: String, ascending: Bool) -> Single<[T]>
+    
+    // Create with thread-safe pool
     func create<T: Object>(block: @escaping ((T) -> ())) -> Single<T>
     
-    // Modify
-    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Completable
+    // Modify with thread-safe pool
+    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Single<T>
     
     // Delete
     func delete<T: Object>(_ object: T) -> Completable

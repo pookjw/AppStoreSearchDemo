@@ -9,7 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 
-class NetworkImpl: Network {
+final class NetworkImpl: Network {
     func request<T: TargetType>(_ serviceType: T) -> Single<Data> {
         return .create { promise in
             let provider: MoyaProvider<T> = .init()

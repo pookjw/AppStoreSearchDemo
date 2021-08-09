@@ -25,6 +25,7 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftLint (0.43.1)
   - SwiftyBeaver (1.9.5)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher (= 6.3.1)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - SnapKit (= 5.0.1)
   - SwiftLint (= 0.43.1)
   - SwiftyBeaver (= 1.9.5)
+  - SwiftyJSON (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -54,6 +56,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
     - SwiftyBeaver
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -70,7 +73,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: ab4af2627a0c0dde0765fd6a4cd1aad410493d9e
+PODFILE CHECKSUM: 98fc3d8d125e65f57ed123601ec775fab2a9a5d5
 
 COCOAPODS: 1.10.1

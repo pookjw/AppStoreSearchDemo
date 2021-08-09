@@ -1,5 +1,5 @@
 //
-//  ITSServiceTest.swift
+//  ITSServiceNetworkTest.swift
 //  AppStoreSearchDemoCoreTests
 //
 //  Created by Jinwoo Kim on 8/4/21.
@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 @testable import AppStoreSearchDemoCore
 
-final class ITSServiceTest: XCTestCase {
+final class ITSServiceNetworkTest: XCTestCase {
     private let network: Network = NetworkImpl()
     private var disposeBag: DisposeBag = .init()
     

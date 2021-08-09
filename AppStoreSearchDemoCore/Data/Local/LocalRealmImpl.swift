@@ -11,7 +11,7 @@ import RxSwift
 
 private var kOperationQueues: [String: OperationQueue] = [:]
 
-class LocalRealmImpl: LocalRealm {
+final class LocalRealmImpl: LocalRealm {
     
     func objects<T: Object>(predicate: NSPredicate?) -> Single<[T]> {
         return .create { promise in
@@ -24,6 +24,34 @@ class LocalRealmImpl: LocalRealm {
                     if let predicate: NSPredicate = predicate {
                         results = results.filter(predicate)
                     }
+                    
+                    promise(.success(results.objects))
+                } catch {
+                    promise(.failure(error))
+                }
+            }
+            
+            self.queue(type: T.self).addOperation(operation)
+            
+            return Disposables.create {
+                operation.cancel()
+            }
+        }
+    }
+    
+    func objects<T>(predicate: NSPredicate?, sortKV: String, ascending: Bool) -> Single<[T]> where T : Object {
+        return .create { promise in
+            
+            let operation: BlockOperation = .init {
+                do {
+                    let realmStore: Realm = try self.realmStore(type: T.self)
+                    var results: Results<T> = realmStore.objects(T.self)
+                    
+                    if let predicate: NSPredicate = predicate {
+                        results = results.filter(predicate)
+                    }
+                    
+                    results = results.sorted(byKeyPath: sortKV, ascending: ascending)
                     
                     promise(.success(results.objects))
                 } catch {
@@ -65,7 +93,7 @@ class LocalRealmImpl: LocalRealm {
         }
     }
     
-    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Completable {
+    func modify<T: Object>(_ object: T, block: @escaping ((T) -> ())) -> Single<T> {
         return .create { promise in
             
             let ref: ThreadSafeReference = .init(to: object)
@@ -76,14 +104,14 @@ class LocalRealmImpl: LocalRealm {
                     
                     try realmStore.write {
                         guard let _object: T = realmStore.resolve(ref) else {
-                            promise(.error(LocalError.realmThreadSolveFailed))
+                            promise(.failure(LocalError.realmThreadSolveFailed))
                             return
                         }
                         block(_object)
-                        promise(.completed)
+                        promise(.success(_object))
                     }
                 } catch {
-                    promise(.error(error))
+                    promise(.failure(error))
                 }
             }
             
@@ -141,6 +169,7 @@ class LocalRealmImpl: LocalRealm {
                 return Disposables.create()
             }
         }
+        .startWith(())
     }
     
     private func queue(type: Object.Type) -> OperationQueue {

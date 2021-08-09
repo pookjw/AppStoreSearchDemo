@@ -40,6 +40,10 @@ def swiftlint_pod
   pod 'SwiftLint', '0.43.1'
 end
 
+def swiftyjson_pod
+  pod 'SwiftyJSON', '~> 5.0'
+end
+
 #
 
 target 'AppStoreSearchDemo' do
@@ -59,6 +63,7 @@ target 'AppStoreSearchDemoCore' do
   realmswift_pod
   swiftybeaver_pod
   swiftlint_pod
+  swiftyjson_pod
 end
 
 target 'AppStoreSearchDemoCoreTests' do

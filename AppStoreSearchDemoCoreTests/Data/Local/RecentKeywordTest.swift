@@ -55,24 +55,48 @@ final class RecentKeywordTest: XCTestCase {
         wait(for: [expectation], timeout: 3)
     }
     
+    func testLoadObjectsSorted() {
+        let expectation: XCTestExpectation = .init()
+        
+        local
+            .objects(predicate: nil, sortKV: #keyPath(RecentKeyword.keyword), ascending: false)
+            .subscribe { (recentKeywords: [RecentKeyword]) in
+                recentKeywords.forEach { recentKeyword in
+                    print(recentKeyword.keyword ?? "nil")
+                }
+                expectation.fulfill()
+            } onFailure: { error in
+                XCTFail(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+        
+        wait(for: [expectation], timeout: 3)
+    }
+    
     func testModifyObject() {
+        testCreateKeyword()
+        
         let expectation: XCTestExpectation = .init()
         
         local
             .objects(predicate: nil)
-            .flatMapCompletable { (keywords: [RecentKeyword]) -> Completable in
+            .asObservable()
+            .flatMap { (keywords: [RecentKeyword]) -> Observable<RecentKeyword> in
                 let random: RecentKeyword = keywords.randomElement()!
                 
                 return self.local
                     .modify(random) { keyword in
                         keyword.keyword = "티비리앙"
                     }
+                    .asObservable()
             }
-            .subscribe {
+            .subscribe(onNext: { keyword in
+                XCTAssertEqual(keyword.keyword, "티비리앙")
                 expectation.fulfill()
-            } onError: { error in
+            },
+            onError: { error in
                 XCTFail(error.localizedDescription)
-            }
+            })
             .disposed(by: disposeBag)
         
         wait(for: [expectation], timeout: 3)
@@ -104,6 +128,7 @@ final class RecentKeywordTest: XCTestCase {
         
         local
             .observe(type: RecentKeyword.self)
+            .skip(1)
             .subscribe(onNext: { _ in
                 expectation.fulfill()
             }, onError: { error in
@@ -111,12 +136,7 @@ final class RecentKeywordTest: XCTestCase {
             })
             .disposed(by: disposeBag)
         
-        local
-            .create { (_: RecentKeyword) in }
-            .subscribe(onFailure: { error in
-                XCTFail(error.localizedDescription)
-            })
-            .disposed(by: disposeBag)
+        testCreateKeyword()
         
         wait(for: [expectation], timeout: 3)
     }

@@ -32,7 +32,7 @@ final class SoftwareInfoDTOTest: XCTestCase {
         }
     }
     
-    func testConversion2() {
+    func testSample() {
         let info: SoftwareInfo = .sample
         XCTAssertEqual(info.trackName, "DoroDoro - Korean Address")
     }

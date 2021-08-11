@@ -44,7 +44,7 @@ final class RecentKeywordTest: XCTestCase {
             .objects(predicate: nil)
             .subscribe { (recentKeywords: [RecentKeyword]) in
                 recentKeywords.forEach { recentKeyword in
-                    print(recentKeyword.keyword ?? "nil")
+                    log.info(recentKeyword.keyword ?? "nil")
                 }
                 expectation.fulfill()
             } onFailure: { error in
@@ -62,7 +62,7 @@ final class RecentKeywordTest: XCTestCase {
             .objects(predicate: nil, sortKV: #keyPath(RecentKeyword.keyword), ascending: false)
             .subscribe { (recentKeywords: [RecentKeyword]) in
                 recentKeywords.forEach { recentKeyword in
-                    print(recentKeyword.keyword ?? "nil")
+                    log.info(recentKeyword.keyword ?? "nil")
                 }
                 expectation.fulfill()
             } onFailure: { error in

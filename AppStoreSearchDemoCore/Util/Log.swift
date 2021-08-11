@@ -8,9 +8,9 @@
 import Foundation
 import SwiftyBeaver
 
-let log: SwiftyBeaver.Type = SwiftyBeaver.self
+public let log: SwiftyBeaver.Type = SwiftyBeaver.self
 
-func initializeLog() {
+public func initializeLog() {
     let console: BaseDestination = ConsoleDestination()
     log.addDestination(console)
 }

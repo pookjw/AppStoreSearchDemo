@@ -28,9 +28,19 @@ final class SearchFlow: AppServiceFlow {
         guard let step: SearchStep = step as? SearchStep else { return .none }
         
         switch step {
+        case .requestSearch(let text):
+            return requestSearch(text: text)
         case .pushToDetails(let info):
             return pushToDetails(info: info)
         }
+    }
+    
+    private func requestSearch(text: String) -> FlowContributors {
+        appService.searchService
+            .requestSearch
+            .accept(text)
+        
+        return .none
     }
     
     private func pushToDetails(info: SoftwareInfo) -> FlowContributors {

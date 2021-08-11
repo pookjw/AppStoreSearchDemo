@@ -10,5 +10,6 @@ import RxFlow
 import AppStoreSearchDemoCore
 
 enum SearchStep: Step {
+    case requestSearch(String)
     case pushToDetails(SoftwareInfo)
 }

@@ -10,5 +10,5 @@ import RxSwift
 import RxCocoa
 
 final class RecentsViewModel {
-    let requestSearch: PublishRelay<String> = .init()
+//    let requestSearch: PublishRelay<String> = .init()
 }

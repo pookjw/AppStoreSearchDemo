@@ -63,6 +63,7 @@ final class TabBarFlow: AppServiceFlow {
                 recentsViewController.loadViewIfNeeded()
                 
                 searchViewController.stepper = searchStepper
+                recentsViewController.stepper = searchStepper
                 
                 nvc.setViewControllers([searchViewController], animated: false)
                 
@@ -71,11 +72,6 @@ final class TabBarFlow: AppServiceFlow {
                 self.appService.searchService
                     .requestSearch
                     .bind(to: searchViewController.viewModel.requestSearch)
-                    .disposed(by: self.disposeBag)
-                
-                recentsViewController.viewModel
-                    .requestSearch
-                    .bind(to: self.appService.searchService.requestSearch)
                     .disposed(by: self.disposeBag)
             }
         }

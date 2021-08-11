@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-final class RecentsViewController: UIViewController {
+final class RecentsViewController: UIViewController, Steppable {
+    var stepper: Stepper?
     private(set) var viewModel: RecentsViewModel! = .init()
 
     override func viewDidLoad() {

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="AppStoreSearchDemo" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="08H-xo-ZNY" id="18r-Co-gzi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5a7-96-tNi"/>
             </connections>
         </placeholder>
@@ -18,8 +19,20 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="08H-xo-ZNY">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="08H-xo-ZNY" secondAttribute="bottom" id="LMg-gT-eAS"/>
+                <constraint firstItem="08H-xo-ZNY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MIw-Ig-QjM"/>
+                <constraint firstAttribute="trailing" secondItem="08H-xo-ZNY" secondAttribute="trailing" id="awZ-rY-AbX"/>
+                <constraint firstItem="08H-xo-ZNY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bzO-BJ-CQL"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>

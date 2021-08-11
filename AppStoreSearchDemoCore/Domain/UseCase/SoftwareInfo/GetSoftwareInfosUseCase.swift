@@ -15,6 +15,8 @@ public protocol GetSoftwareInfosUseCase {
 public final class GetSoftwareInfosUseCaseImpl: GetSoftwareInfosUseCase {
     private let repo: ITSServiceRepository = ITSServiceRepositoryImpl()
     
+    public init() {}
+    
     public func get(text: String) -> Single<[SoftwareInfo]> {
         repo
             .requestSoftware(text: text)

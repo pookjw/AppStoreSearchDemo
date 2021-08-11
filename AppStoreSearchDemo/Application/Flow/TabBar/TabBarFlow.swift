@@ -58,8 +58,12 @@ final class TabBarFlow: AppServiceFlow {
                 let searchViewController: SearchViewController = .loadFromNib()
                 
                 searchViewController.navigationItem.searchController = searchController
-                recentsViewController.stepper = searchStepper
+                
+                searchViewController.loadViewIfNeeded()
+                recentsViewController.loadViewIfNeeded()
+                
                 searchViewController.stepper = searchStepper
+                recentsViewController.stepper = searchStepper
                 
                 nvc.setViewControllers([searchViewController], animated: false)
                 

@@ -15,6 +15,8 @@ public protocol ObserveRecentKeywordUseCase {
 public final class ObserveRecentKeywordUseCaseImpl: ObserveRecentKeywordUseCase {
     private let repo: RecentKeywordRepository = RecentKeywordRepositoryImpl()
     
+    public init() {}
+    
     public func observe() -> Observable<[String]> {
         repo
             .observe()

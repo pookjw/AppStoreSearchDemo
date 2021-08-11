@@ -15,6 +15,8 @@ public protocol GetRecentKeywordUseCase {
 public final class GetRecentKeywordUseCaseImpl: GetRecentKeywordUseCase {
     private let repo: RecentKeywordRepository = RecentKeywordRepositoryImpl()
     
+    public init() {}
+    
     public func getList() -> Single<[String]> {
         repo
             .getList()

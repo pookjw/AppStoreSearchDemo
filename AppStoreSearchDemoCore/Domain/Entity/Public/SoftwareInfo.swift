@@ -44,6 +44,12 @@ public struct SoftwareInfo {
     public let description: String
 }
 
+extension SoftwareInfo: Equatable {
+    public static func == (lhs: SoftwareInfo, rhs: SoftwareInfo) -> Bool {
+        return lhs.trackId == rhs.trackId
+    }
+}
+
 public extension SoftwareInfo {
     static var sample: Self {
         let url: URL = Bundle(identifier: "com.pookjw.AppStoreSearchDemoCore")!.url(forResource: "software_request_data_example", withExtension: "json")!

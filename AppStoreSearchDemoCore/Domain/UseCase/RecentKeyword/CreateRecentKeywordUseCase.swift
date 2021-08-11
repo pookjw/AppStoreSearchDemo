@@ -15,6 +15,8 @@ public protocol CreateRecentKeywordUseCase {
 public final class CreateRecentKeywordUseCaseImpl: CreateRecentKeywordUseCase {
     private let repo: RecentKeywordRepository = RecentKeywordRepositoryImpl()
     
+    public init() {}
+    
     public func create(text: String) -> Completable {
         repo
             .create { new in

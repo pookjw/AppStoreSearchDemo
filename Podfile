@@ -12,6 +12,10 @@ def rxflow_pod
   pod 'RxFlow', '2.12.2'
 end
 
+def rxdatasourced_pod
+  pod 'RxDataSources', '5.0.0'
+end
+
 def moya_pod
   pod 'Moya', '14.0'
 end
@@ -51,6 +55,7 @@ target 'AppStoreSearchDemo' do
   rxcocoa_pod
   rxflow_pod
   rswift_pod
+  rxdatasourced_pod
   kingfisher_pod
   snapkit_pod
   swiftlint_pod

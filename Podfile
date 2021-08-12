@@ -38,14 +38,10 @@ end
 
 def snapkit_pod
   pod 'SnapKit', '5.0.1'
-end 
-
-def swiftlint_pod
-  pod 'SwiftLint', '0.43.1'
 end
 
 def swiftyjson_pod
-  pod 'SwiftyJSON', '~> 5.0'
+  pod 'SwiftyJSON', '5.0'
 end
 
 #
@@ -58,7 +54,6 @@ target 'AppStoreSearchDemo' do
   rxdatasourced_pod
   kingfisher_pod
   snapkit_pod
-  swiftlint_pod
 end
 
 target 'AppStoreSearchDemoCore' do
@@ -67,11 +62,9 @@ target 'AppStoreSearchDemoCore' do
   rswift_pod
   realmswift_pod
   swiftybeaver_pod
-  swiftlint_pod
   swiftyjson_pod
 end
 
 target 'AppStoreSearchDemoCoreTests' do
   rxswift_pod
-  swiftlint_pod
 end

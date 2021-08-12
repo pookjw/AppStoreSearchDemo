@@ -44,7 +44,9 @@ final class SearchViewController: UIViewController, Steppable {
     }
     
     private func makeDataSource() -> SearchViewModel.DataSource {
-        let dataSource: SearchViewModel.DataSource = .init { ds, tv, indexPath, item in
+        let animationConfiguration: AnimationConfiguration = .init(insertAnimation: .fade, reloadAnimation: .fade, deleteAnimation: .fade)
+        
+        let dataSource: SearchViewModel.DataSource = .init(animationConfiguration: animationConfiguration) { ds, tv, indexPath, item in
             let cell: UITableViewCell = tv.dequeueReusableCell(withIdentifier: UITableViewCell.reuseIdentifier, for: indexPath)
             
             switch item {

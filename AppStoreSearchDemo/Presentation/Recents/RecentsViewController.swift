@@ -48,7 +48,9 @@ final class RecentsViewController: UIViewController, Steppable {
     }
     
     private func makeDataSource() -> RecentsViewModel.DataSource {
-        let dataSource: RecentsViewModel.DataSource = .init { ds, tv, indexPath, item in
+        let animationConfiguration: AnimationConfiguration = .init(insertAnimation: .fade, reloadAnimation: .fade, deleteAnimation: .fade)
+        
+        let dataSource: RecentsViewModel.DataSource = .init(animationConfiguration: animationConfiguration) { ds, tv, indexPath, item in
             let cell: UITableViewCell = tv.dequeueReusableCell(withIdentifier: UITableViewCell.reuseIdentifier, for: indexPath)
             
             let text: String

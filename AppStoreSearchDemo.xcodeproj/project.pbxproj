@@ -59,6 +59,10 @@
 		4F6ACFB726C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */; };
 		4F9350BB26C58D8400F90505 /* RecentsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350BA26C58D8400F90505 /* RecentsSectionModel.swift */; };
 		4F9350BD26C58DBE00F90505 /* RecentsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350BC26C58DBE00F90505 /* RecentsItemModel.swift */; };
+		4F9350C126C5991700F90505 /* SearchSoftwareInfoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350C026C5991700F90505 /* SearchSoftwareInfoConfiguration.swift */; };
+		4F9350C326C5993E00F90505 /* SearchSoftwareInfoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350C226C5993E00F90505 /* SearchSoftwareInfoContentView.swift */; };
+		4F9350C526C59A7100F90505 /* UIView+removeAllSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350C426C59A7100F90505 /* UIView+removeAllSubviews.swift */; };
+		4F9350C726C59ADE00F90505 /* SearchSoftwareInfoContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9350C626C59ADE00F90505 /* SearchSoftwareInfoContentView.xib */; };
 		4FC29B5D26BA360C001AADAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B5C26BA360C001AADAB /* AppDelegate.swift */; };
 		4FC29B6126BA360C001AADAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B6026BA360C001AADAB /* ViewController.swift */; };
 		4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6526BA360F001AADAB /* Assets.xcassets */; };
@@ -180,6 +184,10 @@
 		4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
 		4F9350BA26C58D8400F90505 /* RecentsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSectionModel.swift; sourceTree = "<group>"; };
 		4F9350BC26C58DBE00F90505 /* RecentsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsItemModel.swift; sourceTree = "<group>"; };
+		4F9350C026C5991700F90505 /* SearchSoftwareInfoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSoftwareInfoConfiguration.swift; sourceTree = "<group>"; };
+		4F9350C226C5993E00F90505 /* SearchSoftwareInfoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSoftwareInfoContentView.swift; sourceTree = "<group>"; };
+		4F9350C426C59A7100F90505 /* UIView+removeAllSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+removeAllSubviews.swift"; sourceTree = "<group>"; };
+		4F9350C626C59ADE00F90505 /* SearchSoftwareInfoContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSoftwareInfoContentView.xib; sourceTree = "<group>"; };
 		4FC29B5926BA360C001AADAB /* AppStoreSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B5C26BA360C001AADAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC29B6026BA360C001AADAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +282,9 @@
 				4F27CB1026C3FB5E004116C2 /* SearchViewModel.swift */,
 				4F27CB1826C4046D004116C2 /* SearchSectionModel.swift */,
 				4F27CB1A26C404C7004116C2 /* SearchItemModel.swift */,
+				4F9350C026C5991700F90505 /* SearchSoftwareInfoConfiguration.swift */,
+				4F9350C226C5993E00F90505 /* SearchSoftwareInfoContentView.swift */,
+				4F9350C626C59ADE00F90505 /* SearchSoftwareInfoContentView.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -310,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				4F27CAF426C3F01C004116C2 /* UIView+loadFromNib.swift */,
+				4F9350C426C59A7100F90505 /* UIView+removeAllSubviews.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -889,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC29B6926BA360F001AADAB /* LaunchScreen.storyboard in Resources */,
+				4F9350C726C59ADE00F90505 /* SearchSoftwareInfoContentView.xib in Resources */,
 				4F27CAFC26C3F124004116C2 /* RecentsViewController.xib in Resources */,
 				4F27CB1726C40186004116C2 /* DetailsViewController.xib in Resources */,
 				4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */,
@@ -1033,14 +1046,17 @@
 				4F27CB1B26C404C7004116C2 /* SearchItemModel.swift in Sources */,
 				4F27CAEB26C3ECA8004116C2 /* SearchStep.swift in Sources */,
 				4F3A4B3E26C26066005B4922 /* AppStep.swift in Sources */,
+				4F9350C126C5991700F90505 /* SearchSoftwareInfoConfiguration.swift in Sources */,
 				4F27CAED26C3ECAF004116C2 /* SearchStepper.swift in Sources */,
 				4F27CAFE26C3F2CF004116C2 /* SearchService.swift in Sources */,
 				4F4F3CEC26C4FA9B0031343C /* Observable+withOnlyUnretained.swift in Sources */,
 				4F9350BD26C58DBE00F90505 /* RecentsItemModel.swift in Sources */,
+				4F9350C526C59A7100F90505 /* UIView+removeAllSubviews.swift in Sources */,
 				4F3A4B4026C265D2005B4922 /* AppStepper.swift in Sources */,
 				4F27CB0B26C3F8F5004116C2 /* DetailsFlow.swift in Sources */,
 				4F27CAE726C3EC76004116C2 /* SearchViewController.swift in Sources */,
 				4F4F3CE726C4F4D50031343C /* UITableView+register.swift in Sources */,
+				4F9350C326C5993E00F90505 /* SearchSoftwareInfoContentView.swift in Sources */,
 				4F27CAF226C3EF8B004116C2 /* UIViewController+loadFromNib.swift in Sources */,
 				4F3A4B4626C266E4005B4922 /* TabBarFlow.swift in Sources */,
 				4F27CB1526C40089004116C2 /* DetailsViewModel.swift in Sources */,

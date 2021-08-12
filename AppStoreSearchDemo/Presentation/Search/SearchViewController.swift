@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxFlow
 import RxDataSources
+import SnapKit
 import AppStoreSearchDemoCore
 
 final class SearchViewController: UIViewController, Steppable {
@@ -48,9 +49,26 @@ final class SearchViewController: UIViewController, Steppable {
             
             switch item {
             case .recent(let text):
-                cell.textLabel?.text = text
+                // on iOS 14.0 or later, accessing directly to textLabel of default cell style is deprecated.
+                if #available(iOS 14.0, *) {
+                    var configuration: UIListContentConfiguration = cell.defaultContentConfiguration()
+                    configuration.text = text
+                    cell.contentConfiguration = configuration
+                } else {
+                    cell.textLabel?.text = text
+                }
             case .result(let info):
-                cell.textLabel?.text = info.trackName
+                if #available(iOS 14.0, *) {
+                    let configuration: SearchSoftwareInfoConfiguration = .init(softwareInfo: info)
+                    cell.contentConfiguration = configuration
+                } else {
+                    cell.removeAllSubviews()
+                    let contentView: SearchSoftwareInfoContentView = .loadFromNib()
+                    contentView.softwareInfo = info
+                    cell.addSubview(contentView)
+                    contentView.translatesAutoresizingMaskIntoConstraints = false
+                    contentView.snp.remakeConstraints { $0.edges.equalToSuperview() }
+                }
             }
             
             return cell
@@ -71,13 +89,21 @@ final class SearchViewController: UIViewController, Steppable {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
         let item: SearchViewModel.SectionModel.Item = viewModel.dataSource[indexPath]
         
         switch item {
         case .recent(let text):
             stepper?.steps.accept(SearchStep.requestSearch(text))
         case .result(let info):
-            break
+            stepper?.steps.accept(SearchStep.pushToDetails(info))
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        300
     }
 }

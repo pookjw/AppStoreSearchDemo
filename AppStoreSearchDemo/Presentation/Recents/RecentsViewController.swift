@@ -77,6 +77,10 @@ final class RecentsViewController: UIViewController, Steppable {
 
 extension RecentsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
         let item: RecentsViewModel.SectionModel.Item = viewModel.dataSource[indexPath]
         
         switch item {

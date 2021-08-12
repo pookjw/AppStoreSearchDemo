@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecentsViewController" customModule="AppStoreSearchDemo" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="E3k-bT-UIV" id="FOt-C1-WXd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="VOx-zO-dpm"/>
             </connections>
         </placeholder>
@@ -21,6 +22,9 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-bT-UIV">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Quu-7r-7X9"/>
+                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

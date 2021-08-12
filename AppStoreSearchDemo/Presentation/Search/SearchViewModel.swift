@@ -43,7 +43,7 @@ final class SearchViewModel {
     }
     
     private func bind() {
-        let dataSourceRelay: PublishRelay<[SectionModel]> = PublishRelay<[SectionModel]>()
+        let dataSourceRelay: BehaviorRelay<[SectionModel]> = .init(value: [])
         self.dataSourceDriver = dataSourceRelay
             .asObservable()
             .asDriver(onErrorJustReturn: [])
@@ -54,6 +54,8 @@ final class SearchViewModel {
             .withLatestFrom(observeRecentKeywordUseCase.observe(), resultSelector: { (text, recents) in
                 return (text, recents)
             })
+            .subscribe(on: MainScheduler.instance) // Registering Realm's NSNotificationCenter requires Main Thread
+            .observe(on: OperationQueueScheduler(operationQueue: queue))
             .map { (filter, recents) -> [String] in
                 recents.filter { $0.contains(filter) }
             }
@@ -61,6 +63,8 @@ final class SearchViewModel {
             .share()
         
         let searchObservable: Observable<[SoftwareInfo]> = requestSoftwareSearch
+            .subscribe(on: OperationQueueScheduler(operationQueue: queue))
+            .observe(on: OperationQueueScheduler(operationQueue: queue))
             .withUnretained(self)
             .do(onNext: { (weakSelf, text) in
                 weakSelf

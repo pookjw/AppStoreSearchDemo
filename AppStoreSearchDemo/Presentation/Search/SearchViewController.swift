@@ -21,24 +21,18 @@ final class SearchViewController: UIViewController, Steppable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setAttributes()
         configureTableView()
         configureViewModel()
         bind()
     }
     
-    private func setAttributes() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "검색 (번역)"
+    private func configureTableView() {
+        tableView.register(UITableViewCell.self)
     }
     
     private func configureViewModel() {
         let viewModel: SearchViewModel = .init(dataSource: makeDataSource())
         self.viewModel = viewModel
-    }
-    
-    private func configureTableView() {
-        tableView.register(UITableViewCell.self)
     }
     
     private func bind() {

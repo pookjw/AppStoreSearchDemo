@@ -67,6 +67,7 @@ final class TabBarFlow: AppServiceFlow {
                 recentsViewController.stepper = searchStepper
                 
                 nvc.setViewControllers([recentsViewController], animated: false)
+                nvc.navigationBar.prefersLargeTitles = true
                 
                 //
                 
@@ -77,6 +78,9 @@ final class TabBarFlow: AppServiceFlow {
                 
                 self.appService.searchService
                     .requestSoftwareSearch
+                    .do(afterNext: { [weak searchController] _ in
+                        searchController?.isActive = true
+                    })
                     .bind(to: searchViewController.viewModel.requestSoftwareSearch)
                     .disposed(by: self.disposeBag)
                 

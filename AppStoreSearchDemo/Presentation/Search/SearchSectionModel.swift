@@ -19,8 +19,4 @@ enum SearchSectionModel: Int, IdentifiableType, Equatable {
     static func == (lhs: SearchSectionModel, rhs: SearchSectionModel) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
-    
-    static func < (lhs:SearchSectionModel, rhs: SearchSectionModel) -> Bool {
-        return lhs.rawValue < rhs.rawValue
-    }
 }

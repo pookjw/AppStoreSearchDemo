@@ -57,6 +57,8 @@
 		4F6ACFB326C12C5600141987 /* GetRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB226C12C5600141987 /* GetRecentKeywordUseCaseTest.swift */; };
 		4F6ACFB526C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB426C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift */; };
 		4F6ACFB726C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */; };
+		4F9350BB26C58D8400F90505 /* RecentsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350BA26C58D8400F90505 /* RecentsSectionModel.swift */; };
+		4F9350BD26C58DBE00F90505 /* RecentsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9350BC26C58DBE00F90505 /* RecentsItemModel.swift */; };
 		4FC29B5D26BA360C001AADAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B5C26BA360C001AADAB /* AppDelegate.swift */; };
 		4FC29B6126BA360C001AADAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC29B6026BA360C001AADAB /* ViewController.swift */; };
 		4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC29B6526BA360F001AADAB /* Assets.xcassets */; };
@@ -176,6 +178,8 @@
 		4F6ACFB226C12C5600141987 /* GetRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
 		4F6ACFB426C12C8B00141987 /* CreateRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
 		4F6ACFB626C12CCB00141987 /* ObserveRecentKeywordUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveRecentKeywordUseCaseTest.swift; sourceTree = "<group>"; };
+		4F9350BA26C58D8400F90505 /* RecentsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsSectionModel.swift; sourceTree = "<group>"; };
+		4F9350BC26C58DBE00F90505 /* RecentsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsItemModel.swift; sourceTree = "<group>"; };
 		4FC29B5926BA360C001AADAB /* AppStoreSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC29B5C26BA360C001AADAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FC29B6026BA360C001AADAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 				4F27CAF926C3F109004116C2 /* RecentsViewController.swift */,
 				4F27CAFB26C3F124004116C2 /* RecentsViewController.xib */,
 				4F27CB0226C3F4B1004116C2 /* RecentsViewModel.swift */,
+				4F9350BA26C58D8400F90505 /* RecentsSectionModel.swift */,
+				4F9350BC26C58DBE00F90505 /* RecentsItemModel.swift */,
 			);
 			path = Recents;
 			sourceTree = "<group>";
@@ -1030,6 +1036,7 @@
 				4F27CAED26C3ECAF004116C2 /* SearchStepper.swift in Sources */,
 				4F27CAFE26C3F2CF004116C2 /* SearchService.swift in Sources */,
 				4F4F3CEC26C4FA9B0031343C /* Observable+withOnlyUnretained.swift in Sources */,
+				4F9350BD26C58DBE00F90505 /* RecentsItemModel.swift in Sources */,
 				4F3A4B4026C265D2005B4922 /* AppStepper.swift in Sources */,
 				4F27CB0B26C3F8F5004116C2 /* DetailsFlow.swift in Sources */,
 				4F27CAE726C3EC76004116C2 /* SearchViewController.swift in Sources */,
@@ -1044,6 +1051,7 @@
 				4FC29B5D26BA360C001AADAB /* AppDelegate.swift in Sources */,
 				4F27CB1926C4046D004116C2 /* SearchSectionModel.swift in Sources */,
 				4F3A4B4826C26754005B4922 /* TabBarStep.swift in Sources */,
+				4F9350BB26C58D8400F90505 /* RecentsSectionModel.swift in Sources */,
 				4F27CB0526C3F603004116C2 /* Stepable.swift in Sources */,
 				4F27CB1126C3FB5E004116C2 /* SearchViewModel.swift in Sources */,
 				4F27CAE926C3EC99004116C2 /* SearchFlow.swift in Sources */,

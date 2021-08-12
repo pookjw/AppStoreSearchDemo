@@ -18,8 +18,19 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-bT-UIV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="E3k-bT-UIV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ODo-vT-ZzG"/>
+                <constraint firstAttribute="bottom" secondItem="E3k-bT-UIV" secondAttribute="bottom" id="Vk8-Ju-EgZ"/>
+                <constraint firstItem="E3k-bT-UIV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cxZ-Pd-xZY"/>
+                <constraint firstAttribute="trailing" secondItem="E3k-bT-UIV" secondAttribute="trailing" id="jdQ-Ov-BJt"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>

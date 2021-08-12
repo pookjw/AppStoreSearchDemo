@@ -36,6 +36,9 @@
 		4F3A4B4026C265D2005B4922 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A4B3F26C265D2005B4922 /* AppStepper.swift */; };
 		4F3A4B4626C266E4005B4922 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A4B4526C266E4005B4922 /* TabBarFlow.swift */; };
 		4F3A4B4826C26754005B4922 /* TabBarStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A4B4726C26754005B4922 /* TabBarStep.swift */; };
+		4F4F3CE426C4F48A0031343C /* UITableViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F3CE326C4F48A0031343C /* UITableViewCell+reuseIdentifier.swift */; };
+		4F4F3CE726C4F4D50031343C /* UITableView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F3CE626C4F4D50031343C /* UITableView+register.swift */; };
+		4F4F3CEC26C4FA9B0031343C /* Observable+withOnlyUnretained.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F3CEB26C4FA9B0031343C /* Observable+withOnlyUnretained.swift */; };
 		4F6ACF8926C1137900141987 /* ITSServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8826C1137900141987 /* ITSServiceRepository.swift */; };
 		4F6ACF8B26C115C200141987 /* SoftwareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8A26C115C200141987 /* SoftwareInfo.swift */; };
 		4F6ACF8E26C119D100141987 /* SoftwareInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ACF8D26C119D100141987 /* SoftwareInfoDTO.swift */; };
@@ -152,6 +155,9 @@
 		4F3A4B3F26C265D2005B4922 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		4F3A4B4526C266E4005B4922 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
 		4F3A4B4726C26754005B4922 /* TabBarStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStep.swift; sourceTree = "<group>"; };
+		4F4F3CE326C4F48A0031343C /* UITableViewCell+reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+reuseIdentifier.swift"; sourceTree = "<group>"; };
+		4F4F3CE626C4F4D50031343C /* UITableView+register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+register.swift"; sourceTree = "<group>"; };
+		4F4F3CEB26C4FA9B0031343C /* Observable+withOnlyUnretained.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+withOnlyUnretained.swift"; sourceTree = "<group>"; };
 		4F6ACF8826C1137900141987 /* ITSServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITSServiceRepository.swift; sourceTree = "<group>"; };
 		4F6ACF8A26C115C200141987 /* SoftwareInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareInfo.swift; sourceTree = "<group>"; };
 		4F6ACF8D26C119D100141987 /* SoftwareInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareInfoDTO.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 		4F27CAEE26C3EF61004116C2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4F4F3CE926C4FA7E0031343C /* RxSwift */,
 				4F27CAEF26C3EF6C004116C2 /* UIKit */,
 			);
 			path = Extension;
@@ -279,6 +286,8 @@
 		4F27CAEF26C3EF6C004116C2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				4F4F3CE526C4F4C90031343C /* UITableView */,
+				4F4F3CE226C4F47B0031343C /* UITableViewCell */,
 				4F27CAF326C3F00D004116C2 /* UIView */,
 				4F27CAF026C3EF74004116C2 /* UIViewController */,
 			);
@@ -389,6 +398,38 @@
 				4F27CAEC26C3ECAF004116C2 /* SearchStepper.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		4F4F3CE226C4F47B0031343C /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F4F3CE326C4F48A0031343C /* UITableViewCell+reuseIdentifier.swift */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		4F4F3CE526C4F4C90031343C /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				4F4F3CE626C4F4D50031343C /* UITableView+register.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		4F4F3CE926C4FA7E0031343C /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				4F4F3CEA26C4FA830031343C /* ObservableType */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		4F4F3CEA26C4FA830031343C /* ObservableType */ = {
+			isa = PBXGroup;
+			children = (
+				4F4F3CEB26C4FA9B0031343C /* Observable+withOnlyUnretained.swift */,
+			);
+			path = ObservableType;
 			sourceTree = "<group>";
 		};
 		4F6ACF8726C1137200141987 /* RepoInf */ = {
@@ -988,13 +1029,16 @@
 				4F3A4B3E26C26066005B4922 /* AppStep.swift in Sources */,
 				4F27CAED26C3ECAF004116C2 /* SearchStepper.swift in Sources */,
 				4F27CAFE26C3F2CF004116C2 /* SearchService.swift in Sources */,
+				4F4F3CEC26C4FA9B0031343C /* Observable+withOnlyUnretained.swift in Sources */,
 				4F3A4B4026C265D2005B4922 /* AppStepper.swift in Sources */,
 				4F27CB0B26C3F8F5004116C2 /* DetailsFlow.swift in Sources */,
 				4F27CAE726C3EC76004116C2 /* SearchViewController.swift in Sources */,
+				4F4F3CE726C4F4D50031343C /* UITableView+register.swift in Sources */,
 				4F27CAF226C3EF8B004116C2 /* UIViewController+loadFromNib.swift in Sources */,
 				4F3A4B4626C266E4005B4922 /* TabBarFlow.swift in Sources */,
 				4F27CB1526C40089004116C2 /* DetailsViewModel.swift in Sources */,
 				4F27CB0F26C3F908004116C2 /* DetailsStepper.swift in Sources */,
+				4F4F3CE426C4F48A0031343C /* UITableViewCell+reuseIdentifier.swift in Sources */,
 				4F3A4B3C26C25DC9005B4922 /* AppFlow.swift in Sources */,
 				4F27CAF526C3F01C004116C2 /* UIView+loadFromNib.swift in Sources */,
 				4FC29B5D26BA360C001AADAB /* AppDelegate.swift in Sources */,

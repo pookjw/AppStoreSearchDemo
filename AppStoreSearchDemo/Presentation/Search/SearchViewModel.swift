@@ -15,7 +15,8 @@ final class SearchViewModel {
     typealias SectionModel = RxDataSources.AnimatableSectionModel<SearchSectionModel, SearchItemModel>
     typealias DataSource = RxTableViewSectionedReloadDataSource<SectionModel>
     
-    let requestSearch: PublishRelay<String> = .init()
+    let requestRecentSearch: PublishRelay<String> = .init()
+    let requestSoftwareSearch: PublishRelay<String> = .init()
     
     let dataSource: DataSource
     private(set) var dataSourceDriver: Driver<[SectionModel]>!
@@ -30,11 +31,71 @@ final class SearchViewModel {
     private let createRecentKeywordUseCase: CreateRecentKeywordUseCase = CreateRecentKeywordUseCaseImpl()
     private let observeRecentKeywordUseCase: ObserveRecentKeywordUseCase = ObserveRecentKeywordUseCaseImpl()
     
+    private var disposeBag: DisposeBag = .init()
+    
     deinit {
         queue.cancelAllOperations()
     }
     
     init(dataSource: DataSource) {
         self.dataSource = dataSource
+        bind()
+    }
+    
+    private func bind() {
+        let dataSourceRelay: PublishRelay<[SectionModel]> = PublishRelay<[SectionModel]>()
+        self.dataSourceDriver = dataSourceRelay
+            .asObservable()
+            .asDriver(onErrorJustReturn: [])
+        
+        //
+        
+        let recentObservable: Observable<[String]> = requestRecentSearch
+            .withLatestFrom(observeRecentKeywordUseCase.observe(), resultSelector: { (text, recents) in
+                return (text, recents)
+            })
+            .map { (filter, recents) -> [String] in
+                recents.filter { $0.contains(filter) }
+            }
+            .startWith([])
+            .share()
+        
+        let searchObservable: Observable<[SoftwareInfo]> = requestSoftwareSearch
+            .withUnretained(self)
+            .do(onNext: { (weakSelf, text) in
+                weakSelf
+                    .createRecentKeywordUseCase
+                    .create(text: text)
+                    .subscribe()
+                    .disposed(by: weakSelf.disposeBag)
+            })
+            .flatMap { (weakSelf, text) in
+                weakSelf
+                    .getSoftwareInfoUseCase
+                    .get(text: text)
+            }
+            .startWith([])
+            .share()
+            .asObservable()
+        
+        //
+        
+         recentObservable
+            .map { recents -> [SectionModel] in
+                let items: [SearchItemModel] = recents
+                    .map { .recent($0) }
+                return [.init(model: .recents, items: items)]
+            }
+            .bind(to: dataSourceRelay)
+            .disposed(by: disposeBag)
+        
+        searchObservable
+            .map { results -> [SectionModel] in
+                let items: [SearchItemModel] = results
+                    .map { .result($0) }
+                return [.init(model: .results, items: items)]
+            }
+            .bind(to: dataSourceRelay)
+            .disposed(by: disposeBag)
     }
 }

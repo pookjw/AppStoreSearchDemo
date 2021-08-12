@@ -37,7 +37,7 @@ final class SearchFlow: AppServiceFlow {
     
     private func requestSearch(text: String) -> FlowContributors {
         appService.searchService
-            .requestSearch
+            .requestSoftwareSearch
             .accept(text)
         
         return .none

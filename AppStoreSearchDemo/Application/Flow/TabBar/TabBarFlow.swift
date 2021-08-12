@@ -53,11 +53,12 @@ final class TabBarFlow: AppServiceFlow {
                 
                 //
                 
-                let recentsViewController: RecentsViewController = .loadFromNib()
-                let searchController: UISearchController = .init(searchResultsController: recentsViewController)
                 let searchViewController: SearchViewController = .loadFromNib()
+                let recentsViewController: RecentsViewController = .loadFromNib()
+                let searchController: UISearchController = .init(searchResultsController: searchViewController)
                 
-                searchViewController.navigationItem.searchController = searchController
+                searchController.dimsBackgroundDuringPresentation = false
+                recentsViewController.navigationItem.searchController = searchController
                 
                 searchViewController.loadViewIfNeeded()
                 recentsViewController.loadViewIfNeeded()
@@ -65,13 +66,35 @@ final class TabBarFlow: AppServiceFlow {
                 searchViewController.stepper = searchStepper
                 recentsViewController.stepper = searchStepper
                 
-                nvc.setViewControllers([searchViewController], animated: false)
+                nvc.setViewControllers([recentsViewController], animated: false)
                 
                 //
                 
                 self.appService.searchService
-                    .requestSearch
-                    .bind(to: searchViewController.viewModel.requestSearch)
+                    .requestSoftwareSearch
+                    .bind(to: searchController.searchBar.rx.text)
+                    .disposed(by: self.disposeBag)
+                
+                self.appService.searchService
+                    .requestSoftwareSearch
+                    .bind(to: searchViewController.viewModel.requestSoftwareSearch)
+                    .disposed(by: self.disposeBag)
+                
+                searchController
+                    .searchBar
+                    .rx
+                    .text
+                    .map { $0 ?? "" }
+                    .bind(to: searchViewController.viewModel.requestRecentSearch)
+                    .disposed(by: self.disposeBag)
+                
+                searchController
+                    .searchBar
+                    .rx
+                    .searchButtonClicked
+                    .withOnlyUnretained(searchController.searchBar)
+                    .compactMap { $0.text }
+                    .bind(to: searchViewController.viewModel.requestSoftwareSearch)
                     .disposed(by: self.disposeBag)
             }
         }

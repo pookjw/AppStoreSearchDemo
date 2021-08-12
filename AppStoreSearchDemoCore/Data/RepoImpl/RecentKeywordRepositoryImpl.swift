@@ -13,7 +13,7 @@ final class RecentKeywordRepositoryImpl: RecentKeywordRepository {
     
     func getList() -> Single<[RecentKeyword]> {
         localRealm
-            .objects(predicate: nil, sortKV: #keyPath(RecentKeyword.keyword), ascending: false)
+            .objects(predicate: nil, sortKV: #keyPath(RecentKeyword.timestamp), ascending: false)
     }
     
     func create(block: @escaping ((RecentKeyword) -> ())) -> Single<RecentKeyword> {

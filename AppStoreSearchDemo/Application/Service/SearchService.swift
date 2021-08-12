@@ -10,5 +10,5 @@ import RxSwift
 import RxCocoa
 
 final class SearchService {
-    let requestSearch: PublishRelay<String> = .init()
+    let requestSoftwareSearch: PublishRelay<String> = .init()
 }

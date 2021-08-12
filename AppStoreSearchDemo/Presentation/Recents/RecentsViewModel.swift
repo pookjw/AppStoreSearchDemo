@@ -13,7 +13,7 @@ import AppStoreSearchDemoCore
 
 final class RecentsViewModel {
     typealias SectionModel = RxDataSources.AnimatableSectionModel<RecentsSectionModel, RecentsItemModel>
-    typealias DataSource = RxTableViewSectionedReloadDataSource<SectionModel>
+    typealias DataSource = RxTableViewSectionedAnimatedDataSource<SectionModel>
     
     let dataSource: DataSource
     private(set) var dataSourceDriver: Driver<[SectionModel]>!
@@ -59,7 +59,7 @@ final class RecentsViewModel {
         
         recentObservable
             .map { recents -> [SectionModel] in
-                let items: [RecentsItemModel] = recents
+                let items: [SectionModel.Item] = recents
                     .map { .recent($0) }
                 return [.init(model: .recents, items: items)]
             }

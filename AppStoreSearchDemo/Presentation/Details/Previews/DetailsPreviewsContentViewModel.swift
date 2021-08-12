@@ -1,8 +1,8 @@
 //
-//  DetailsViewModel.swift
+//  DetailsPreviewsContentViewModel.swift
 //  AppStoreSearchDemo
 //
-//  Created by Jinwoo Kim on 8/11/21.
+//  Created by Jinwoo Kim on 8/13/21.
 //
 
 import Foundation
@@ -11,9 +11,9 @@ import RxCocoa
 import RxDataSources
 import AppStoreSearchDemoCore
 
-final class DetailsViewModel {
-    typealias SectionModel = RxDataSources.AnimatableSectionModel<DetailsSectionModel, DetailsItemModel>
-    typealias DataSource = RxTableViewSectionedAnimatedDataSource<SectionModel>
+final class DetailsPreviewsContentViewModel {
+    typealias SectionModel = RxDataSources.AnimatableSectionModel<DetailsPreviewsSectionModel, DetailsPreviewsItemModel>
+    typealias DataSource = RxCollectionViewSectionedAnimatedDataSource<SectionModel>
     
     let requestDataSource: PublishRelay<SoftwareInfo> = .init()
     
@@ -47,10 +47,9 @@ final class DetailsViewModel {
         requestDataSource
             .observe(on: OperationQueueScheduler(operationQueue: queue))
             .map { info -> [SectionModel] in
-                let items: [SectionModel.Item] = [
-                    .intro(info),
-                    .previews(info)
-                ]
+                let items: [SectionModel.Item] = info.screenshotUrls
+                    .compactMap { $0 }
+                    .map { .image($0) }
                 return [.init(model: .noname, items: items)]
             }
             .bind(to: dataSourceRelay)

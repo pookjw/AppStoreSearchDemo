@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UITableView
 import RxDataSources
 import AppStoreSearchDemoCore
 
@@ -19,6 +20,15 @@ enum SearchItemModel: IdentifiableType, Equatable {
             return UUID().uuidString
         case .result(let info):
             return info.trackId
+        }
+    }
+    
+    var height: CGFloat {
+        switch self {
+        case .recent(_):
+            return UITableView.automaticDimension
+        case .result(_):
+            return 300
         }
     }
     

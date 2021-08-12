@@ -104,6 +104,7 @@ extension SearchViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        300
+        let item: SearchViewModel.SectionModel.Item = viewModel.dataSource[indexPath]
+        return item.height
     }
 }

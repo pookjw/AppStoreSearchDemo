@@ -25,6 +25,7 @@ final class RecentsViewController: UIViewController, Steppable {
         configureViewModel()
         bind()
     }
+    
 
     private func setAttributes() {
         title = "검색 (번역)"

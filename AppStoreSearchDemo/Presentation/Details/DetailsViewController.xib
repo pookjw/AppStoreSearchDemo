@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="AppStoreSearchDemo" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="evb-mZ-3dI" id="Ia4-Ww-0y1"/>
                 <outlet property="view" destination="iN0-l3-epB" id="g6Q-Ch-2bT"/>
             </connections>
         </placeholder>
@@ -18,8 +19,22 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="evb-mZ-3dI">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="URU-CE-9Wt"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="evb-mZ-3dI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ba9-ga-dAE"/>
+                <constraint firstItem="evb-mZ-3dI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QCm-g2-cTF"/>
+                <constraint firstAttribute="bottom" secondItem="evb-mZ-3dI" secondAttribute="bottom" id="SUd-IU-HXr"/>
+                <constraint firstAttribute="trailing" secondItem="evb-mZ-3dI" secondAttribute="trailing" id="gOP-O8-Zwd"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>

@@ -13,7 +13,7 @@ import AppStoreSearchDemoCore
 
 final class SearchViewModel {
     typealias SectionModel = RxDataSources.AnimatableSectionModel<SearchSectionModel, SearchItemModel>
-    typealias DataSource = RxTableViewSectionedReloadDataSource<SectionModel>
+    typealias DataSource = RxTableViewSectionedAnimatedDataSource<SectionModel>
     
     let requestRecentSearch: PublishRelay<String> = .init()
     let requestSoftwareSearch: PublishRelay<String> = .init()
@@ -51,6 +51,7 @@ final class SearchViewModel {
         //
         
         let recentObservable: Observable<[String]> = requestRecentSearch
+            .distinctUntilChanged()
             .withLatestFrom(observeRecentKeywordUseCase.observe(), resultSelector: { (text, recents) in
                 return (text, recents)
             })
@@ -86,7 +87,7 @@ final class SearchViewModel {
         
          recentObservable
             .map { recents -> [SectionModel] in
-                let items: [SearchItemModel] = recents
+                let items: [SectionModel.Item] = recents
                     .map { .recent($0) }
                 return [.init(model: .recents, items: items)]
             }
@@ -95,7 +96,7 @@ final class SearchViewModel {
         
         searchObservable
             .map { results -> [SectionModel] in
-                let items: [SearchItemModel] = results
+                let items: [SectionModel.Item] = results
                     .map { .result($0) }
                 return [.init(model: .results, items: items)]
             }

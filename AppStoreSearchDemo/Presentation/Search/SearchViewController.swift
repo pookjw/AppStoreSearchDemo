@@ -79,9 +79,9 @@ final class SearchViewController: UIViewController, Steppable {
             
             switch sectionModel.model {
             case .recents:
-                return "최근 검색어 (번역)"
+                return Localizable.RECENTS.string
             case .results:
-                return "결과 (번역)"
+                return Localizable.RESULTS.string
             }
         }
 

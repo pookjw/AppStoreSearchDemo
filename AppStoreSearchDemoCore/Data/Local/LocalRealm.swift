@@ -15,7 +15,7 @@ enum LocalError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .realmThreadSolveFailed:
-            return "RealmStore Solve 에러 (번역)"
+            return "RealmStore Solve error"
         }
     }
 }

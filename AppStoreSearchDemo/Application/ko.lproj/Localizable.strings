@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  AppStoreSearchDemo
+
+  Created by Jinwoo Kim on 8/17/21.
+  
+*/
+
+"SEARCH" = "검색";
+
+"RECENTS" = "최근 검색어";
+
+"RESULTS" = "결과";

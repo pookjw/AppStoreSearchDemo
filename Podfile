@@ -20,10 +20,6 @@ def moya_pod
   pod 'Moya', '14.0'
 end
 
-def rswift_pod
-  pod 'R.swift', '5.4.0'
-end
-
 def kingfisher_pod
   pod 'Kingfisher', '6.3.1'
 end
@@ -50,7 +46,6 @@ target 'AppStoreSearchDemo' do
   rxswift_pod
   rxcocoa_pod
   rxflow_pod
-  rswift_pod
   rxdatasourced_pod
   kingfisher_pod
   snapkit_pod
@@ -59,7 +54,6 @@ end
 target 'AppStoreSearchDemoCore' do
   rxswift_pod
   moya_pod
-  rswift_pod
   realmswift_pod
   swiftybeaver_pod
   swiftyjson_pod

@@ -15,7 +15,7 @@ enum NetworkError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidStatusCode(let code):
-            return "request error (번역) \(code)"
+            return "request error \(code)"
         }
     }
 }

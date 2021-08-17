@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		094240FABC099483D5BBA63C /* Pods_AppStoreSearchDemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */; };
 		3B1AFA62D274519ADFD7FFF8 /* Pods_AppStoreSearchDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78057F32E8523AF803C8117 /* Pods_AppStoreSearchDemo.framework */; };
+		4F23A27F26CB9F65003DA092 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F23A27E26CB9F65003DA092 /* Localizable.swift */; };
+		4F23A28226CB9F76003DA092 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F23A28426CB9F76003DA092 /* Localizable.strings */; };
 		4F27CAE726C3EC76004116C2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27CAE626C3EC76004116C2 /* SearchViewController.swift */; };
 		4F27CAE926C3EC99004116C2 /* SearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27CAE826C3EC99004116C2 /* SearchFlow.swift */; };
 		4F27CAEB26C3ECA8004116C2 /* SearchStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27CAEA26C3ECA8004116C2 /* SearchStep.swift */; };
@@ -152,6 +154,11 @@
 		01C07BCED67E0B64ABA813FD /* Pods-AppStoreSearchDemoCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCore.release.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCore/Pods-AppStoreSearchDemoCore.release.xcconfig"; sourceTree = "<group>"; };
 		11CF3D0292657E77D00FF106 /* Pods_AppStoreSearchDemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreSearchDemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C6A9131AF0900CF015D926 /* Pods-AppStoreSearchDemoCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreSearchDemoCoreTests/Pods-AppStoreSearchDemoCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F23A27B26CB9F53003DA092 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4F23A27D26CB9F59003DA092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4F23A27E26CB9F65003DA092 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		4F23A28326CB9F76003DA092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F23A28526CB9F78003DA092 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F27CAE626C3EC76004116C2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4F27CAE826C3EC99004116C2 /* SearchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlow.swift; sourceTree = "<group>"; };
 		4F27CAEA26C3ECA8004116C2 /* SearchStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStep.swift; sourceTree = "<group>"; };
@@ -382,6 +389,7 @@
 			children = (
 				4F27CB0026C3F3E6004116C2 /* AppService.swift */,
 				4F27CAFD26C3F2CF004116C2 /* SearchService.swift */,
+				4F23A27E26CB9F65003DA092 /* Localizable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -413,6 +421,9 @@
 		4F3A4B4126C266B0005B4922 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4FC29B5C26BA360C001AADAB /* AppDelegate.swift */,
+				4FC29B6026BA360C001AADAB /* ViewController.swift */,
+				4F23A28426CB9F76003DA092 /* Localizable.strings */,
 				4F27CAFF26C3F3D4004116C2 /* Service */,
 				4F27CAEE26C3EF61004116C2 /* Extension */,
 				4F3A4B4226C266B6005B4922 /* Flow */,
@@ -772,8 +783,6 @@
 		4FC29B5B26BA360C001AADAB /* AppStoreSearchDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4FC29B5C26BA360C001AADAB /* AppDelegate.swift */,
-				4FC29B6026BA360C001AADAB /* ViewController.swift */,
 				4F3A4B4126C266B0005B4922 /* Application */,
 				4F27CAE426C3EC61004116C2 /* Presentation */,
 				4FC29B6526BA360F001AADAB /* Assets.xcassets */,
@@ -1023,6 +1032,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 4FC29B5026BA360C001AADAB;
 			productRefGroup = 4FC29B5A26BA360C001AADAB /* Products */;
@@ -1047,6 +1057,7 @@
 				4F27CAFC26C3F124004116C2 /* RecentsViewController.xib in Resources */,
 				4F27CB1726C40186004116C2 /* DetailsViewController.xib in Resources */,
 				4F9350D826C5B2B800F90505 /* DetailsPreviewsContentView.xib in Resources */,
+				4F23A28226CB9F76003DA092 /* Localizable.strings in Resources */,
 				4F9350D226C5A80700F90505 /* DetailsIntroContentView.xib in Resources */,
 				4FC29B6626BA360F001AADAB /* Assets.xcassets in Resources */,
 				4F27CAF726C3F070004116C2 /* SearchViewController.xib in Resources */,
@@ -1194,6 +1205,7 @@
 				4F27CAEB26C3ECA8004116C2 /* SearchStep.swift in Sources */,
 				4F9350CA26C5A46C00F90505 /* DetailsSectionModel.swift in Sources */,
 				4F3A4B3E26C26066005B4922 /* AppStep.swift in Sources */,
+				4F23A27F26CB9F65003DA092 /* Localizable.swift in Sources */,
 				4F9350DC26C5B68300F90505 /* DetailsPreviewContentView.swift in Sources */,
 				4F9350DA26C5B65D00F90505 /* DetailsPreviewConfiguration.swift in Sources */,
 				4F9350E626C5B88D00F90505 /* DetailsPreviewsSectionModel.swift in Sources */,
@@ -1313,10 +1325,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4F23A28426CB9F76003DA092 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F23A28326CB9F76003DA092 /* en */,
+				4F23A28526CB9F78003DA092 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4FC29B6726BA360F001AADAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4FC29B6826BA360F001AADAB /* Base */,
+				4F23A27B26CB9F53003DA092 /* ko */,
+				4F23A27D26CB9F59003DA092 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1328,6 +1351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1389,6 +1413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

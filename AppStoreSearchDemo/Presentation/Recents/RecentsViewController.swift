@@ -28,7 +28,7 @@ final class RecentsViewController: UIViewController, Steppable {
     
 
     private func setAttributes() {
-        title = "검색 (번역)"
+        title = Localizable.SEARCH.string
     }
     
     private func configureTableView() {
@@ -71,7 +71,7 @@ final class RecentsViewController: UIViewController, Steppable {
             
             return cell
         } titleForHeaderInSection: { sectionModel, row in
-            return "최근 검색어 (번역)"
+            return Localizable.RECENTS.string
         }
         
         return dataSource

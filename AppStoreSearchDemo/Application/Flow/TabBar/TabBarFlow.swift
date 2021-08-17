@@ -46,7 +46,7 @@ final class TabBarFlow: AppServiceFlow {
                     searchImage = UIImage(systemName: "magnifyingglass")
                 }
                 
-                let searchTabBarItem: UITabBarItem = .init(title: "Search (번역)", image: searchImage, tag: 0)
+                let searchTabBarItem: UITabBarItem = .init(title: Localizable.SEARCH.string, image: searchImage, tag: 0)
                 
                 root.tabBarItem = searchTabBarItem
                 self.tabBarController.setViewControllers([root], animated: false)
